@@ -1,4 +1,4 @@
-# SignU
+# SignMimic
 Robotics hand simulation for sign language using reinforced imitation learning
 
 # current progress: 
