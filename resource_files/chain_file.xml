@@ -1,0 +1,224 @@
+<mujocoinclude>
+	<body name="forearm" childclass="Bot_hand" pos="0 .01 0" euler="0 0 0">
+		<inertial pos="0.001 -0.002 0.29" quat="0.982 -0.016 0.000 -0.188" mass="4" diaginertia="0.01 0.01 0.0075" />
+		<!--<joint name="base" type="free" limited="false"/>-->
+		<geom class="A_Vizual" pos="0 -.01 .04" name="V_forearm"  mesh="forearm" euler="0 0 -1.57"/>
+		<geom class="A_Hand" name="C_forearm" type="mesh" mesh="forearm_cvx" pos="0 -.01 .04" euler="0 0 -1.57" rgba=".4 .5 .6 .7"/>
+		<geom class="B_Vizual" pos="0 -.01 .04" name="V_arm"  mesh="forearm" euler="0 0 -1.57"/>
+		<geom class="C_Vizual" pos="0 -.01 .04" name="V_arm02"  mesh="forearm" euler="0 0 -1.57"/>
+
+		<!--<site name="S_CY36" pos=" 0.034 -0.023 0.123" group="0" />
+		<site name="S_CY38" pos="-0.036  0.009 0.123" group="0" />-->
+
+
+		<!-- ======= Wrist ======= -->
+		<body name="wrist" pos="0 0 0.256">
+			<inertial pos="0.003 0.000 0.016" quat="0.504 0.496 0.495 0.504" mass="0.3" diaginertia="0.001 0.001 0.001" />
+			<joint name="WristJoint1" type="hinge" pos="0 0 0" axis="0 1 0" range="-0.524 0.175" damping=".5" armature=".005" user="1123"/>
+			<geom class="A_Vizual" name="V_wrist" mesh="wrist"/>
+			<geom class="A_Hand" name="C_wrist" type="capsule" pos="0 0 0"  quat=".707 .707 0 0" size=".015 .01" rgba=".4 .5 .6 .1"/>
+			<!--<site name="S_WristJoint1l" pos=" 0.0380 0 0.01625" group="0"/>
+			<site name="S_WristJoint1r" pos="-0.0326 0 0.01625" group="0"/>-->
+
+
+
+			<!-- ======= Palm ======= -->
+			<body name="palm" pos="0 0 0.034">
+				<inertial pos="0.006 -0.000 0.036" quat="0.716 0.044 0.075 0.693" mass="0.3" diaginertia="0.001 0.001 0.001" />
+				<joint name="WristJoint0" type="hinge" pos="0 0 0" axis="1 0 0" range="6-0.785 0.611" damping=".5" armature=".005" user="1122"/>
+				<geom class="A_Vizual" name="V_palm" mesh="palm"/>
+				<geom class="A_Hand" name="handpalm0" type="box" pos="0.011 0 0.038" size=".032 .0111 .049" rgba=".4 .5 .6 .1"/>
+				<geom class="A_Hand" name="C_palm1" type="box" pos="-.032 0 0.014" size=".011 .0111 .025" rgba=".4 .5 .6 .1"/>
+				<!--<site name="S_grasp" 	 pos=".007 -.04 0.07" quat="0.0087 -0.6 -0.0034 -0.81  " group="4"/>-->
+				<site class="A_Touch" name="Touch_palm0top" pos="0.011 0 0.063" size=".032 .0111 .024"/>
+				<site class="A_Touch" name="Touch_palm0bottom" pos=".021 0 0.014" size=".021 .0111 .025"/>
+				<site class="A_Touch" name="Touch_palm1" pos="-.021 0 0.014" size=".021 .0111 .025"/>
+
+
+				<!-- ======= First Finger ======= -->
+				<body name="ffknuckle" pos="0.033 0 0.095">
+					<inertial pos="-0.000 0.000 0.000" quat="0.520 0.854 0.006 -0.003" mass="0.008" diaginertia="0.00001 0.00001 0.00001"/>
+					<joint name="ForeFingerJoint3" type="hinge" pos="0 0 0" axis="0 1 0" range="-0.436 0.436"  user="1103"/>
+					<geom class="C_Vizual" name="V_forefingerknuckle" mesh="knuckle"/>
+					<!--Proximal-->
+					<body name="ffproximal" pos="0 0 0">
+						<inertial pos="0.000 0.000 0.023" quat="0.707 -0.004 0.004 0.707" mass="0.014" diaginertia="0.00001 0.00001 0.00001"/>
+						<joint name="ForeFingerJoint2" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1102"/>
+						<geom class="A_Vizual" name="V_forefingerproximal" mesh="F3"/>
+						<geom class="A_Hand" name="forefinger_proximal" type="capsule" pos="0 0 .0225" size=".01 .0225"/>
+						<site class="A_Touch" name="Touch_forefingerproximal" size="0.010 0.006 0.013" pos="0 -.004 .0225"/>
+						<!--middle-->
+						<body name="ffmiddle" pos="0 0 0.045">
+							<inertial pos="-0.000 -0.000 0.011" quat="0.707 0.000 -0.000 0.707" mass="0.012" diaginertia="0.00001 0.00001 0.00001"/>
+							<joint name="ForeFingerJoint1" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1101"/>
+							<geom class="B_Vizual" name="V_forefingermiddle" mesh="F2"/>
+							<geom class="A_Hand" name="forefinger_middle" type="capsule" pos="0 0 .0125" size=".00805 .0125"/>
+							<site class="A_Touch" name="Touch_forefingermiddle" size="0.009 0.005 0.013" pos="0 -.004 .0125"/>
+							<!--distal-->
+							<body name="ffdistal" pos="0 0 0.025">
+								<inertial pos="0 -0.000 0.015" quat="0.707 -0.003 0.003 0.707" mass="0.010" diaginertia="0.00001 0.00001 0.00001"/>
+								<joint name="ForeFingerJoint0" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1100"/>
+								<geom class="A_Vizual" name="V_forefingerdistal" pos="0 0 .001" mesh="F1"/>
+								<geom class="A_Hand" name="forefinger_distal" type="capsule" pos="0 0 .012" size=".00705 .012"  condim="4"/>
+								<site name="S_fftip" pos="0.000 0 0.026" group="3"/>
+								<site class="A_Touch" name="Touch_forefingertip" size="0.009 0.004 0.013" pos="0 -.004 .018"/>
+							</body>
+						</body>
+					</body>
+				</body> <!--First Finger End-->
+
+
+
+				<!-- ======= Middle Finger ======= -->
+				<body name="mfknuckle" pos="0.011 0 0.099">
+					<inertial pos="-0.000 0.000 0.000" quat="0.520 0.854 0.006 -0.003" mass="0.008" diaginertia="0.00001 0.00001 0.00001"/>
+					<joint name="MiddleFingerJoint3" type="hinge" pos="0 0 0" axis="0 1 0" range="-0.436 0.436"  user="1107"/>
+					<geom class="C_Vizual" name="V_middlefingerknuckle" mesh="knuckle"/>
+					<!--Proximal-->
+					<body name="mfproximal" pos="0 0 0">
+						<inertial pos="0.000 0.000 0.023" quat="0.707 -0.004 0.004 0.707" mass="0.014" diaginertia="0.00001 0.00001 0.00001"/>
+						<joint name="MiddleFingerJoint2" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1106"/>
+						<geom class="A_Vizual" name="V_middlefingerproximal" mesh="F3"/>
+						<geom class="A_Hand" name="middlefinger_proximal" type="capsule" pos="0 0 .0225" size=".01 .0225"/>
+						<site class="A_Touch" name="Touch_middlefingerproximal" size="0.010 0.006 0.013" pos="0 -.004 .0225"/>
+						<!--Middle-->
+						<body name="mfmiddle" pos="0 0 0.045">
+							<inertial pos="-0.000 -0.000 0.012" quat="0.707 0.000 -0.000 0.707" mass="0.012" diaginertia="0.00001 0.00001 0.00001"/>
+							<joint name="MiddleFingerJoint1" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1105"/>
+							<geom class="B_Vizual" name="V_middlefingermiddle" mesh="F2"/>
+							<geom class="A_Hand" name="C_middlefingermiddle" type="capsule" pos="0 0 .0125" size=".00805 .0125"/>
+							<site class="A_Touch" name="Touch_middlefingermiddle" size="0.009 0.005 0.013" pos="0 -.004 .0125"/>
+							<!--Distal-->
+							<body name="mfdistal" pos="0 0 0.025">
+								<inertial pos="0 -0.000 0.015" quat="0.707 -0.003 0.003 0.707" mass="0.010" diaginertia="0.00001 0.00001 0.00001"/>
+								<joint name="MiddleFingerJoint0" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1104"/>
+								<geom class="A_Vizual" name="V_middlefingerdistal" mesh="F1"/>
+								<geom class="A_Hand" name="middlefinger_distal" type="capsule" pos="0 0 .012" size=".00705 .012" condim="4"/>
+								<site name="S_mftip" 	pos="0.000 0 0.026"	group="3"/>
+								<site class="A_Touch" name="Touch_middlefingertip" size="0.009 0.004 0.013" pos="0 -.004 .018"/>
+							</body>
+						</body>
+					</body>
+				</body> <!--Middle Finger End-->
+
+
+
+				<!-- ======= Ring Finger ======= -->
+				<body name="rfknuckle" pos="-0.011 0 0.095">
+					<inertial pos="-0.000 0.000 0.000" quat="0.520 0.854 0.006 -0.003" mass="0.008" diaginertia="0.00001 0.00001 0.00001"/>
+					<joint name="RingFingerJoint3" type="hinge" pos="0 0 0" axis="0 1 0" range="-0.436 0.436"  user="1111"/>
+					<geom class="C_Vizual" name="V_ringfingerknuckle" mesh="knuckle"/>
+					<!--Proximal-->
+					<body name="rfproximal" pos="0 0 0">
+						<inertial pos="0.000 0.000 0.023" quat="0.707 -0.004 0.004 0.707" mass="0.014" diaginertia="0.00001 0.00001 0.00001"/>
+						<joint name="RingFingerJoint2" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1110"/>
+						<geom class="A_Vizual" name="V_ringfingerproximal" mesh="F3"/>
+						<geom class="A_Hand" name="ringfinger_proximal" type="capsule" pos="0 0 .0225" size=".01 .0225"/>
+						<site class="A_Touch" name="Touch_ringfingerproximal" size="0.010 0.006 0.013" pos="0 -.004 .0225"/>
+						<!--Middle-->
+						<body name="rfmiddle" pos="0 0 0.045">
+							<inertial pos="-0.000 -0.000 0.012" quat="0.707 0.000 -0.000 0.707" mass="0.012" diaginertia="0.00001 0.00001 0.00001"/>
+							<joint name="RingFingerJoint1" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1109"/>
+							<geom class="B_Vizual" name="V_ringfingermiddle" mesh="F2"/>
+							<geom class="A_Hand" name="ringfinger_middle" type="capsule" pos="0 0 .0125" size=".00805 .0125"/>
+							<site class="A_Touch" name="Touch_ringfingermiddle" size="0.009 0.005 0.013" pos="0 -.004 .0125"/>
+							<!--Distal-->
+							<body name="rfdistal" pos="0 0 0.025">
+								<inertial pos="0 -0.000 0.015" quat="0.707 -0.003 0.003 0.707" mass="0.010" diaginertia="0.00001 0.00001 0.00001"/>
+								<joint name="RingFingerJoint0" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1108"/>
+								<geom class="A_Vizual" name="V_ringfingerdistal" mesh="F1" pos="0 0 .001"/>
+								<geom class="A_Hand" name="ringfinger_distal" type="capsule" pos="0 0 .012" size=".00705 .012" condim="4"/>
+								<site name="S_rftip" 	pos="0.000 0 0.026"	group="3"/>
+								<site class="A_Touch" name="Touch_ringfingertip" size="0.009 0.004 0.013" pos="0 -.004 .018"/>
+							</body>
+						</body>
+					</body>
+				</body> <!--Ring Finger End-->
+
+
+
+				<!-- ======= Little Finger ======= -->
+				<body name="lfmetacarpal" pos="-0.017 0 0.044">
+					<inertial pos="-0.014 0.001 0.014" quat="0.709 -0.092 -0.063 0.696" mass="0.075" diaginertia="0.00001 0.00001 0.00001"/>
+					<joint name="LittleFingerJoint4" type="hinge" pos="0 0 0" axis="0.571 0 0.821" range="0 0.698"  user="1116"/>
+					<!--<joint name="LFJ4" type="hinge" pos="0 0 0" axis="0.571 0 0.821" range="0 0.0698"  user="1116"/>-->
+					<geom class="B_Vizual" name="V_littlefingermetacarpal" pos="-0.016 0.000 -0.023" mesh="lfmetacarpal"/>
+					<geom class="A_Hand" name="C_littlefingermetacarpal" type="box" pos="-.0165 0 0.01" size=".0095 .0111 .025" rgba=".4 .5 .6 .2"/>
+					<site class="A_Touch" name="Touch_littlefingermetacarpal" pos="-.0165 0 0.015" size=".0095 .0111 .02"/>
+					<!--Knuckle-->
+					<body name="lfknuckle" pos="-0.017 0 0.044">
+						<inertial pos="-0.000 0.000 0.000" quat="0.520 0.854 0.006 -0.003" mass="0.008" diaginertia="0.00001 0.00001 0.00001"/>
+						<joint name="LittleFingerJoint3" type="hinge" pos="0 0 0" axis="0 1 0" range="-0.436 0.436"  user="1115"/>
+						<geom class="C_Vizual" name="V_littlefingerknuckle" mesh="knuckle"/>
+						<!--Proximal-->
+						<body name="lfproximal" pos="0 0 0">
+							<inertial pos="0.000 0.000 0.023" quat="0.707 -0.004 0.004 0.707" mass="0.014" diaginertia="0.00001 0.00001 0.00001"/>
+							<joint name="LittleFingerJoint2" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1114"/>
+							<geom class="A_Vizual" name="V_littlefingerproximal" mesh="F3"/>
+							<geom class="A_Hand" name="littlefinger_proximal" type="capsule" pos="0 0 .0225" size=".01 .0225"/>
+							<site class="A_Touch" name="Touch_littlefingerproximal" size="0.010 0.006 0.013" pos="0 -.004 .0225"/>
+							<!--Middle-->
+							<body name="lfmiddle" pos="0 0 0.045">
+								<inertial pos="-0.000 -0.000 0.012" quat="0.707 0.000 -0.000 0.707" mass="0.012" diaginertia="0.00001 0.00001 0.00001"/>
+								<joint name="LittleFingerJoint1" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1113"/>
+								<geom class="B_Vizual" name="V_littlefingermiddle" mesh="F2"/>
+								<geom class="A_Hand" name="littlefinger_middle" type="capsule" pos="0 0 .0125" size=".00805 .0125"/>
+								<site class="A_Touch" name="Touch_littlefingermiddle" size="0.009 0.005 0.013" pos="0 -.004 .0125"/>
+								<!--Distal-->
+								<body name="lfdistal" pos="0 0 0.025">
+									<inertial pos="0 -0.000 0.015" quat="0.707 -0.003 0.003 0.707" mass="0.010" diaginertia="0.00001 0.00001 0.00001"/>
+									<joint name="LittleFingerJoint0" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.571"  user="1112"/>
+									<geom class="A_Vizual" name="V_littlefingerdistal" mesh="F1" pos="0 0 .001"/>
+									<geom class="A_Hand" name="littlefinger_distal" type="capsule" pos="0 0 .012" size=".00705 .012" condim="4"/>
+									<site name="S_lftip" 	pos="0.000 0 0.026"	group="3"/>
+									<site class="A_Touch" name="Touch_littlefingertip" size="0.009 0.004 0.013" pos="0 -.004 .018"/>
+								</body>
+							</body>
+						</body>
+					</body>
+				</body> <!--Little Finger End-->
+
+
+
+				<!-- ======= Thumb Finger ======= -->
+				<body name="thbase" pos="0.034 -0.009 0.029" axisangle="0  1 0  0.785" >
+					<inertial pos="0 0 0" mass="0.010" diaginertia="0.00001 0.00001 0.00001"/>
+					<joint name="ThumbJoint4" type="hinge" pos="0 0 0" axis="0 0 -1" range="-1.047 1.047"  user="1121"/>
+					<geom class="B_Vizual" name="V_thumbbase" type="box" group="1" pos="0 0 0" size="0.001 0.001 0.001" />
+					<!--Proximal-->
+					<body name="thproximal" pos="0 0 0">
+						<inertial pos="-0.000 -0.000 0.017" quat="0.982 -0.000 0.001 0.191" mass="0.016" diaginertia="0.00001 0.00001 0.00001"/>
+						<joint name="ThumbJoint3" type="hinge" pos="0 0 0" axis="1 0 0" range="0 1.309"  user="1120"/>
+						<geom class="B_Vizual" name="V_thumbproximal" mesh="TH3_z"/>
+						<geom class="A_Hand" name="C_thumbproximal" type="capsule" pos="0 0 .019" size=".013 .019" rgba=".4 .5 .6 .1"/>
+						<site class="A_Touch" name="Touch_thumbproxiaml" size="0.005 0.011 0.016" pos="-.007 0 0.019" />
+						<!--Hub-->
+						<body name="thhub" pos="0 0 0.038">
+							<inertial pos="0 0 0" mass="0.002" diaginertia="0.00001 0.00001 0.00001"/>
+							<joint name="ThumbJoint2" type="hinge" pos="0 0 0" axis="1 0 0" range="-0.262 0.262"  user="1119"/>
+							<geom class="A_Vizual" name="V_thumbhub" type="box" group="1" pos="0 0 0" size="0.001 0.001 0.001"/>
+							<!--Middle-->
+							<body name="thmiddle" pos="0 0 0">
+								<inertial pos="0.000 -0.000 0.016" quat="1.000 -0.001 -0.007 0.003" mass="0.016" diaginertia="0.00001 0.00001 0.00001"/>
+								<joint name="ThumbJoint1" type="hinge" pos="0 0 0" axis="0 1 0" range="-0.524 0.524"  user="1118"/>
+								<geom class="B_Vizual" name="V_thumbmiddle" mesh="TH2_z"/>
+								<geom class="A_Hand" name="C_thumbmiddle" type="capsule" pos="0 0 .016" size=".011 .016"/>
+								<site class="A_Touch" name="Touch_thumbmiddle" size="0.005 0.011 0.016" pos="-.006 0 0.016" />
+								<!--Distal-->
+								<body name="thdistal" pos="0 0 0.032">
+									<inertial pos="0.000 -0.000 0.016" quat="0.999 -0.005 -0.047 0.005" mass="0.016" diaginertia="0.00001 0.00001 0.00001"/>
+									<joint name="ThumbJoint0" type="hinge" pos="0 0 0" axis="0 1 0" range="-1.571 0"  user="1117"/>
+									<geom class="A_Vizual" name="V_thumbdistal" mesh="TH1_z"/>
+									<geom class="A_Hand" name="thumb_distal" type="capsule" pos="0 0 .013" size=".00918 .013" condim="4"/>
+									<site name="S_thtip" 	pos="0.000 0 0.0275" group="3"/>
+									<site class="A_Touch" name="Touch_thumbtip" size="0.005 0.011 0.016" pos="-.005 0 0.02" />
+								</body>
+							</body>
+						</body>
+					</body>
+				</body> <!--Thumb Finger End-->
+			</body> <!--Palm Ends-->
+		</body> <!--Wrist Ends-->
+	</body> <!--Forearm/ Hand Actuation Ends-->
+
+</mujocoinclude>

@@ -1,0 +1,96 @@
+<mujocoinclude>
+	<!-- ================ ACTUATORS: TENDON MOTORS ====================== -->
+	<actuator>
+		<!-- Actuator Configuration -->
+		<general name="WRJ1r_motor" class="Bot_hand" user="2038" tendon="WRJ1r_tendon" ctrlrange="-1 0" gainprm="125" gear="1"/>
+		<general name="WRJ1l_motor" class="Bot_hand" user="2039" tendon="WRJ1l_tendon" ctrlrange="-1 0" gainprm="125" gear="1"/>
+		<general name="WRJ0u_motor" class="Bot_hand" user="2036" tendon="WRJ0u_tendon" ctrlrange="-1 0" gainprm="125" gear="1"/>
+		<general name="WRJ0d_motor" class="Bot_hand" user="2037" tendon="WRJ0d_tendon" ctrlrange="-1 0" gainprm="125" gear="1"/>
+
+		<general name="FFJ3r_motor" class="Bot_hand" user="2004" tendon="FFJ3r_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="FFJ3l_motor" class="Bot_hand" user="2005" tendon="FFJ3l_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="FFJ2u_motor" class="Bot_hand" user="2002" tendon="FFJ2u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="FFJ2d_motor" class="Bot_hand" user="2003" tendon="FFJ2d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="FFJ1u_motor" class="Bot_hand" user="2000" tendon="FFJ1u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="FFJ1d_motor" class="Bot_hand" user="2001" tendon="FFJ1d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+
+		<general name="MFJ3r_motor" class="Bot_hand" user="2010" tendon="MFJ3r_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="MFJ3l_motor" class="Bot_hand" user="2011" tendon="MFJ3l_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="MFJ2u_motor" class="Bot_hand" user="2008" tendon="MFJ2u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="MFJ2d_motor" class="Bot_hand" user="2009" tendon="MFJ2d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="MFJ1u_motor" class="Bot_hand" user="2006" tendon="MFJ1u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="MFJ1d_motor" class="Bot_hand" user="2007" tendon="MFJ1d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+
+		<general name="RFJ3r_motor" class="Bot_hand" user="2016" tendon="RFJ3r_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="RFJ3l_motor" class="Bot_hand" user="2017" tendon="RFJ3l_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="RFJ2u_motor" class="Bot_hand" user="2014" tendon="RFJ2u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="RFJ2d_motor" class="Bot_hand" user="2015" tendon="RFJ2d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="RFJ1u_motor" class="Bot_hand" user="2012" tendon="RFJ1u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="RFJ1d_motor" class="Bot_hand" user="2013" tendon="RFJ1d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+
+		<general name="LFJ4u_motor" class="Bot_hand" user="2024" tendon="LFJ4u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="LFJ4d_motor" class="Bot_hand" user="2025" tendon="LFJ4d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="LFJ3r_motor" class="Bot_hand" user="2022" tendon="LFJ3r_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="LFJ3l_motor" class="Bot_hand" user="2023" tendon="LFJ3l_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="LFJ2u_motor" class="Bot_hand" user="2020" tendon="LFJ2u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="LFJ2d_motor" class="Bot_hand" user="2021" tendon="LFJ2d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="LFJ1u_motor" class="Bot_hand" user="2018" tendon="LFJ1u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="LFJ1d_motor" class="Bot_hand" user="2019" tendon="LFJ1d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+
+		<general name="THJ4a_motor" class="Bot_hand" user="2033" tendon="THJ4a_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ4c_motor" class="Bot_hand" user="2034" tendon="THJ4c_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ3u_motor" class="Bot_hand" user="2031" tendon="THJ3u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ3d_motor" class="Bot_hand" user="2032" tendon="THJ3d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ2u_motor" class="Bot_hand" user="2029" tendon="THJ2u_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ2d_motor" class="Bot_hand" user="2030" tendon="THJ2d_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ1r_motor" class="Bot_hand" user="2027" tendon="THJ1r_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ1l_motor" class="Bot_hand" user="2028" tendon="THJ1l_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ0r_motor" class="Bot_hand" user="2025" tendon="THJ0r_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+		<general name="THJ0l_motor" class="Bot_hand" user="2026" tendon="THJ0l_tendon" ctrlrange="-1 0" gainprm="45" gear="1"/>
+	</actuator>
+
+	<sensor>
+		<!-- Actuator Force Sensors -->
+		<actuatorfrc name="WRJ1r_force" actuator="WRJ1r_motor"/>
+		<actuatorfrc name="WRJ1l_force" actuator="WRJ1l_motor"/>
+		<actuatorfrc name="WRJ0d_force" actuator="WRJ0d_motor"/>
+		<actuatorfrc name="WRJ0u_force" actuator="WRJ0u_motor"/>
+		<actuatorfrc name="FFJ3l_force" actuator="FFJ3l_motor"/>
+		<actuatorfrc name="FFJ3r_force" actuator="FFJ3r_motor"/>
+		<actuatorfrc name="FFJ2u_force" actuator="FFJ2u_motor"/>
+		<actuatorfrc name="FFJ2d_force" actuator="FFJ2d_motor"/>
+		<actuatorfrc name="FFJ1u_force" actuator="FFJ1u_motor"/>
+		<actuatorfrc name="FFJ1d_force" actuator="FFJ1d_motor"/>
+		<actuatorfrc name="MFJ3l_force" actuator="MFJ3l_motor"/>
+		<actuatorfrc name="MFJ3r_force" actuator="MFJ3r_motor"/>
+		<actuatorfrc name="MFJ2u_force" actuator="MFJ2u_motor"/>
+		<actuatorfrc name="MFJ2d_force" actuator="MFJ2d_motor"/>
+		<actuatorfrc name="MFJ1u_force" actuator="MFJ1u_motor"/>
+		<actuatorfrc name="MFJ1d_force" actuator="MFJ1d_motor"/>
+		<actuatorfrc name="RFJ3l_force" actuator="RFJ3l_motor"/>
+		<actuatorfrc name="RFJ3r_force" actuator="RFJ3r_motor"/>
+		<actuatorfrc name="RFJ2u_force" actuator="RFJ2u_motor"/>
+		<actuatorfrc name="RFJ2d_force" actuator="RFJ2d_motor"/>
+		<actuatorfrc name="RFJ1u_force" actuator="RFJ1u_motor"/>
+		<actuatorfrc name="RFJ1d_force" actuator="RFJ1d_motor"/>
+		<actuatorfrc name="LFJ4u_force" actuator="LFJ4u_motor"/>
+		<actuatorfrc name="LFJ4d_force" actuator="LFJ4d_motor"/>
+		<actuatorfrc name="LFJ3l_force" actuator="LFJ3l_motor"/>
+		<actuatorfrc name="LFJ3r_force" actuator="LFJ3r_motor"/>
+		<actuatorfrc name="LFJ2u_force" actuator="LFJ2u_motor"/>
+		<actuatorfrc name="LFJ2d_force" actuator="LFJ2d_motor"/>
+		<actuatorfrc name="LFJ1u_force" actuator="LFJ1u_motor"/>
+		<actuatorfrc name="LFJ1d_force" actuator="LFJ1d_motor"/>
+		<actuatorfrc name="THJ4a_force" actuator="THJ4a_motor"/>
+		<actuatorfrc name="THJ4c_force" actuator="THJ4c_motor"/>
+		<actuatorfrc name="THJ3u_force" actuator="THJ3u_motor"/>
+		<actuatorfrc name="THJ3d_force" actuator="THJ3d_motor"/>
+		<actuatorfrc name="THJ2u_force" actuator="THJ2u_motor"/>
+		<actuatorfrc name="THJ2d_force" actuator="THJ2d_motor"/>
+		<actuatorfrc name="THJ1l_force" actuator="THJ1l_motor"/>
+		<actuatorfrc name="THJ1r_force" actuator="THJ1r_motor"/>
+		<actuatorfrc name="THJ0l_force" actuator="THJ0l_motor"/>
+		<actuatorfrc name="THJ0r_force" actuator="THJ0r_motor"/>
+	</sensor>
+</mujocoinclude>
+

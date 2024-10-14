@@ -1,0 +1,359 @@
+<mujocoinclude>
+	<compiler angle="radian"/>
+
+	<size 	njmax="400"
+			nconmax="100"
+			nuser_jnt="1"
+			nuser_site="1"
+			nuser_tendon="1"
+			nuser_sensor="1"
+			nuser_actuator="16"
+			nstack="600000"/>
+
+	<option	timestep="0.002"
+			iterations="20"
+			apirate="200">
+	</option>
+
+	<visual>
+		<map fogstart="3" fogend="5" force="0.1"/>
+		<quality shadowsize="4096"/>
+		<global offwidth="1280" offheight="720"/>
+	</visual>
+	<!-- need to make changes to names in the assets below -->
+	<asset>
+		<mesh name="forearm"         file="../Bot_hand/resource_files/meshes/forearm_electric.stl"/>
+		<mesh name="forearm_cvx"     file="../Bot_hand/resource_files/meshes/forearm_electric_cvx.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/wrist.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/palm.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/knuckle.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/F3.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/F2.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/F1.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/lfmetacarpal.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/TH3_z.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/TH2_z.stl"/>
+		<mesh scale=".001 .001 .001" file="../Bot_hand/resource_files/meshes/TH1_z.stl"/>
+
+		<texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="127"
+			rgb1=".3 .6 .5" rgb2=".3 .6 .5" markrgb="0 0 0" random="0.01"/>
+			
+		  <!-- Metallic Red Material -->
+    		<material name="MetallicRed" specular="1" shininess="0.8" reflectance="0.9" rgba="1 0 0 1"/>
+
+    		<!-- Metallic Gold Material -->
+    		<material name="MetallicGold" specular="1" shininess="0.8" reflectance="0.9" rgba="1 0.843 0 1"/>
+    		
+    		 <material name="MetallicBlack" specular="1" shininess="0.8" reflectance="0.9" rgba="0 0 0 1"/>
+
+    		<material name="MetallicOffWhite" specular="1" shininess="0.6" reflectance="0.3" rgba="0.96 0.96 0.96 1"/>
+    		
+    		<material name="MetallicGreen" specular="1" shininess="0.8" reflectance="0.9" rgba="0 1 0 1"/>
+		<material name="MetallicBlue" specular="1" shininess="0.8" reflectance="0.9" rgba="0 0 1 1"/>
+
+
+		<!--	Old materials (ignore)
+		<material name="MatColl" specular="1" shininess=".3" reflectance="0.5" rgba=".4 .5 .6 1"/>
+		<material name="MatViz" specular="0.75" shininess=".1" reflectance="0.5" rgba="0.9 .7 .5 1"/>
+		<material name="_MatViz" specular="0.75" shininess=".1" reflectance="0.5" rgba="0.4 .4 .4 1"/>-->
+
+		<material name='object' texture="texgeom" texuniform="false"/>
+	</asset>
+
+	<default>
+	<!-- chaning the class name to Bot_hand -->
+		<default class="Bot_hand">
+			<geom friction="1 0.005 0.001" condim="3" margin="0.0005" contype="1" conaffinity="1"/>
+			<joint limited="true" damping="0.05" armature=".001" margin="0.01" frictionloss="0.001"/>
+			<tendon limited="true"/>
+			<!--<mesh scale="0.001 0.001 0.001"/>-->
+			<site size="0.005" rgba=".4 .9 .4 1"/>
+
+			<!--Touch geoms-->
+			<default class="A_Touch">
+				<site type="box" rgba=".8 .8 .8 .25" group="4"/>
+			</default>
+
+			<!--Collission geoms-->
+			<default class="A_Hand">
+				<geom material="MetallicRed" contype="1" conaffinity="0" group="4"/>
+			</default>
+
+			<!--Meshes-->
+			<default class="A_Vizual">
+				<geom material="MetallicOffWhite" contype="0" conaffinity="0" group="1" type="mesh"/>
+				
+			</default>
+			<default class="B_Vizual">
+				<geom material="MetallicBlue" contype="0" conaffinity="0" group="1" type="mesh"/>
+				<!--<geom mesh="palm" material="MetallicBlack" contype="0" conaffinity="0" group="3" type="mesh"/>-->
+				<!--<geom material="MetallicRed" contype="0" conaffinity="0" group="2" type="mesh"/>-->
+			</default>
+
+			<default class="C_Vizual">
+				<geom material="MetallicRed" contype="0" conaffinity="0" group="1" type="mesh"/>
+				
+			</default>
+
+			<default class="free">
+				<joint type="free" damping="0" armature="0" limited="false"/>
+			</default>
+
+			<!--EQUIVALENT JOINT MOTORS-->
+			<general ctrllimited="true" ctrlrange="-1 1" dyntype="none" gaintype="fixed"/>
+		</default>
+	</default>
+
+	<contact>
+		<!--Thumb-->
+		<pair geom1="forefinger_distal" 	geom2="thumb_distal" condim="1"/>
+		<pair geom1="forefinger_middle" 	geom2="thumb_distal" condim="1"/>
+		<pair geom1="forefinger_proximal" 	geom2="thumb_distal" condim="1"/>
+		<pair geom1="middlefinger_proximal" 	geom2="thumb_distal" condim="1"/>
+		<pair geom1="middlefinger_distal" 	geom2="thumb_distal" condim="1"/>
+		<pair geom1="ringfinger_distal" 	geom2="thumb_distal" condim="1"/>
+		<pair geom1="littlefinger_distal" 	geom2="thumb_distal" condim="1"/>
+		<pair geom1="handpalm0" 		geom2="thumb_distal" condim="1"/>
+
+		<!--Distals with Distals-->
+		<pair geom1="middlefinger_distal" 	geom2="forefinger_distal" condim="1"/>
+		<pair geom1="ringfinger_distal" 	geom2="middlefinger_distal" condim="1"/>
+		<pair geom1="littlefinger_distal" 	geom2="ringfinger_distal" condim="1"/>
+
+		<!--Proximals with Proximals-->
+		<pair geom1="middlefinger_proximal" 	geom2="forefinger_proximal" condim="1"/>
+		<pair geom1="ringfinger_proximal" 	geom2="middlefinger_proximal" condim="1"/>
+		<pair geom1="littlefinger_proximal" 	geom2="ringfinger_proximal" condim="1"/>
+
+		<!--little finger -->
+		<pair geom1="littlefinger_distal" geom2="ringfinger_distal" condim="1"/>
+		<pair geom1="littlefinger_distal" geom2="middlefinger_distal" condim="1"/>
+		<pair geom1="littlefinger_distal" geom2="ringfinger_middle" condim="1"/>
+		<pair geom1="littlefinger_middle" geom2="ringfinger_distal" condim="1"/>
+		<pair geom1="littlefinger_middle" geom2="ringfinger_middle" condim="1"/>
+	</contact>
+
+	<tendon>
+
+		<!-- ======= Wrist ======= CHANGED-->
+		<fixed name="WRJ1r_tendon" range="-.032 0.032" user="1236">
+			<joint joint="WristJoint1"  coef="0.018"/>
+		</fixed>
+		<fixed name="WRJ1l_tendon" range="-.032 0.032" user="1237">
+			<joint joint="WristJoint1"  coef="-0.018"/>
+		</fixed>
+
+		<fixed name="WRJ0u_tendon" range="-.032 0.032" user="1236">
+			<joint joint="WristJoint0"  coef="0.018"/>
+		</fixed>
+		<fixed name="WRJ0d_tendon" range="-.032 0.032" user="1237">
+			<joint joint="WristJoint0"  coef="-0.018"/>
+		</fixed>
+
+		<!-- ======= First Finger ======= -->
+		<fixed name="FFJ3r_tendon" range="-0.018 0.018" user="1204">
+			<joint joint="ForeFingerJoint3"  coef="0.010"/>
+		</fixed>
+		<fixed name="FFJ3l_tendon" range="-0.018 0.018" user="1205">
+			<joint joint="ForeFingerJoint3"  coef="-0.010"/>
+		</fixed>
+		<fixed name="FFJ2u_tendon" range="-0.007 0.030" user="1202">
+			<joint joint="ForeFingerJoint2"  coef="0.010"/>
+		</fixed>
+		<fixed name="FFJ2d_tendon" range="-0.030 0.007" user="1203">
+			<joint joint="ForeFingerJoint2"  coef="-0.010"/>
+		</fixed>
+		<!--coupler tendon-->
+		<fixed name="FFJ1c_tendon" range ="-0.0010 0.0010">
+			<joint joint="ForeFingerJoint0"  coef="0.00705"/>
+			<joint joint="ForeFingerJoint1"  coef="-0.00805"/>
+		</fixed>
+		<fixed name="FFJ1u_tendon" range="-0.007 0.030" user="1200">
+			<joint joint="ForeFingerJoint0"  coef="0.00705"/>
+			<joint joint="ForeFingerJoint1"  coef="0.00805"/>
+		</fixed>
+		<fixed name="FFJ1d_tendon" range="-0.030 0.007" user="1201">
+			<joint joint="ForeFingerJoint0"  coef="-0.00705"/>
+			<joint joint="ForeFingerJoint1"  coef="-0.00805"/>
+		</fixed>
+
+		<!-- ======= Middle Finger ======= -->
+		<fixed name="MFJ3r_tendon" range="-0.018 0.018" user="1210">
+			<joint joint="MiddleFingerJoint3"  coef="0.010"/>
+		</fixed>
+		<fixed name="MFJ3l_tendon" range="-0.018 0.018" user="1211">
+			<joint joint="MiddleFingerJoint3"  coef="-0.010"/>
+		</fixed>
+		<fixed name="MFJ2u_tendon" range="-0.007 0.030" user="1208">
+			<joint joint="MiddleFingerJoint2"  coef="0.010"/>
+		</fixed>
+		<fixed name="MFJ2d_tendon" range="-0.030 0.007" user="1209">
+			<joint joint="MiddleFingerJoint2"  coef="-0.010"/>
+		</fixed>
+		<!--coupler tendon-->
+		<fixed name="MFJ1c_tendon" range ="-0.001 0.001">
+			<joint joint="MiddleFingerJoint0"  coef="0.00705"/>
+			<joint joint="MiddleFingerJoint1"  coef="-0.00805"/>
+		</fixed>
+		<fixed name="MFJ1u_tendon" range="-0.007 0.030" user="1206">
+			<joint joint="MiddleFingerJoint0"  coef="0.00705"/>
+			<joint joint="MiddleFingerJoint1"  coef="0.00805"/>
+		</fixed>
+		<fixed name="MFJ1d_tendon" range="-0.030 0.007" user="1207">
+			<joint joint="MiddleFingerJoint0"  coef="-0.00705"/>
+			<joint joint="MiddleFingerJoint1"  coef="-0.00805"/>
+		</fixed>
+
+		<!-- ======= Ring Finger ======= -->
+		<fixed name="RFJ3r_tendon" range="-0.018 0.018" user="1216">
+			<joint joint="RingFingerJoint3"  coef="0.010"/>
+		</fixed>
+		<fixed name="RFJ3l_tendon" range="-0.018 0.018" user="1217">
+			<joint joint="RingFingerJoint3"  coef="-0.010"/>
+		</fixed>
+		<fixed name="RFJ2u_tendon" range="-0.007 0.030" user="1214">
+			<joint joint="RingFingerJoint2"  coef="0.010"/>
+		</fixed>
+		<fixed name="RFJ2d_tendon" range="-0.030 0.007" user="1215">
+			<joint joint="RingFingerJoint2"  coef="-0.010"/>
+		</fixed>
+		<!--coupler tendon-->
+		<fixed name="RFJ1c_tendon" range ="-0.001 0.001">
+			<joint joint="RingFingerJoint0"  coef="0.00705"/>
+			<joint joint="RingFingerJoint1"  coef="-0.00805"/>
+		</fixed>
+		<fixed name="RFJ1u_tendon" range="-0.007 0.030" user="1212">
+			<joint joint="RingFingerJoint0"  coef="0.00705"/>
+			<joint joint="RingFingerJoint1"  coef="0.00805"/>
+		</fixed>
+		<fixed name="RFJ1d_tendon" range="-0.030 0.007" user="1213">
+			<joint joint="RingFingerJoint0"  coef="-0.00705"/>
+			<joint joint="RingFingerJoint1"  coef="-0.00805"/>
+		</fixed>
+
+		<!-- ======= Little Finger ======= -->
+		<fixed name="LFJ4u_tendon" range="-0.007 0.030" user="1224">
+			<joint joint="LittleFingerJoint4"  coef="0.010"/>
+		</fixed>
+		<fixed name="LFJ4d_tendon" range="-0.030 0.007" user="1225">
+			<joint joint="LittleFingerJoint4"  coef="-0.010"/>
+		</fixed>
+		<fixed name="LFJ3r_tendon" range="-0.018 0.018" user="1222">
+			<joint joint="LittleFingerJoint3"  coef="0.010"/>
+		</fixed>
+		<fixed name="LFJ3l_tendon" range="-0.018 0.018" user="1223">
+			<joint joint="LittleFingerJoint3"  coef="-0.010"/>
+		</fixed>
+		<fixed name="LFJ2u_tendon" range="-0.007 0.030" user="1220">
+			<joint joint="LittleFingerJoint2"  coef="0.010"/>
+		</fixed>
+		<fixed name="LFJ2d_tendon" range="-0.030 0.007" user="1221">
+			<joint joint="LittleFingerJoint2"  coef="-0.010"/>
+		</fixed>
+		<!--coupler tendon-->
+		<fixed name="LFJ1c_tendon" range ="-0.001 0.001">
+			<joint joint="LittleFingerJoint0"  coef="0.00705"/>
+			<joint joint="LittleFingerJoint1"  coef="-0.00805"/>
+		</fixed>
+		<fixed name="LFJ1u_tendon" range="-0.007 0.030" user="1218">
+			<joint joint="LittleFingerJoint0"  coef="0.00705"/>
+			<joint joint="LittleFingerJoint1"  coef="0.00805"/>
+		</fixed>
+		<fixed name="LFJ1d_tendon" range="-0.030 0.007" user="1219">
+			<joint joint="LittleFingerJoint0"  coef="-0.00705"/>
+			<joint joint="LittleFingerJoint1"  coef="-0.00805"/>
+		</fixed>
+
+		<!-- ======= Thumb Finger ======= -->
+		<fixed name="THJ4a_tendon" range="-0.018 0.018" user="1234">
+			<joint joint="ThumbJoint4"  coef="0.01636"/>
+		</fixed>
+		<fixed name="THJ4c_tendon" range="-0.018 0.018" user="1235">
+			<joint joint="ThumbJoint4"  coef="-0.01636"/>
+		</fixed>
+		<fixed name="THJ3u_tendon" range="-0.007 0.030" user="1232">
+			<joint joint="ThumbJoint3"  coef="0.010"/>
+		</fixed>
+		<fixed name="THJ3d_tendon" range="-0.030 0.007" user="1233">
+			<joint joint="ThumbJoint3"  coef="-0.010"/>
+		</fixed>
+		<fixed name="THJ2u_tendon" range="-0.018 0.018" user="1230">
+			<joint joint="ThumbJoint2"  coef="0.011"/>
+		</fixed>
+		<fixed name="THJ2d_tendon" range="-0.018 0.018" user="1231">
+			<joint joint="ThumbJoint2"  coef="-0.011"/>
+		</fixed>
+		<fixed name="THJ1r_tendon" range="-0.018 0.018" user="1228">
+			<joint joint="ThumbJoint1"  coef="0.011"/>
+		</fixed>
+		<fixed name="THJ1l_tendon" range="-0.018 0.018" user="1229">
+			<joint joint="ThumbJoint1"  coef="-0.011"/>
+		</fixed>
+		<fixed name="THJ0r_tendon" range="-0.030 0.007" user="1226">
+			<joint joint="ThumbJoint0"  coef="0.009"/>
+		</fixed>
+		<fixed name="THJ0l_tendon" range="-0.007 0.030" user="1227">
+			<joint joint="ThumbJoint0"  coef="-0.009"/>
+		</fixed>
+	</tendon>
+
+	<sensor>
+		<!-- ======= Joint Sensors ======= CHANGED-->
+		<jointpos name="WRJ1_sensor"	joint="WristJoint1"/>
+		<jointpos name="WRJ0_sensor"	joint="WristJoint0"/>
+
+		<jointpos name="FFJ3_sensor"	joint="ForeFingerJoint3"/>
+		<jointpos name="FFJ2_sensor"	joint="ForeFingerJoint2"/>
+		<jointpos name="FFJ1_sensor"	joint="ForeFingerJoint1"/>
+		<jointpos name="FFJ0_sensor"	joint="ForeFingerJoint0"/>
+
+		<jointpos name="MFJ3_sensor"	joint="MiddleFingerJoint3"/>
+		<jointpos name="MFJ2_sensor"	joint="MiddleFingerJoint2"/>
+		<jointpos name="MFJ1_sensor"	joint="MiddleFingerJoint1"/>
+		<jointpos name="MFJ0_sensor"	joint="MiddleFingerJoint0"/>
+
+		<jointpos name="RFJ3_sensor"	joint="RingFingerJoint3"/>
+		<jointpos name="RFJ2_sensor"	joint="RingFingerJoint2"/>
+		<jointpos name="RFJ1_sensor"	joint="RingFingerJoint1"/>
+		<jointpos name="RFJ0_sensor"	joint="RingFingerJoint0"/>
+
+		<jointpos name="LFJ4_sensor"	joint="LittleFingerJoint4"/>
+		<jointpos name="LFJ3_sensor"	joint="LittleFingerJoint3"/>
+		<jointpos name="LFJ2_sensor"	joint="LittleFingerJoint2"/>
+		<jointpos name="LFJ1_sensor"	joint="LittleFingerJoint1"/>
+		<jointpos name="LFJ0_sensor"	joint="LittleFingerJoint0"/>
+
+		<jointpos name="THJ4_sensor"	joint="ThumbJoint4"/>
+		<jointpos name="THJ3_sensor"	joint="ThumbJoint3"/>
+		<jointpos name="THJ2_sensor"	joint="ThumbJoint2"/>
+		<jointpos name="THJ1_sensor"	joint="ThumbJoint1"/>
+		<jointpos name="THJ0_sensor"	joint="ThumbJoint0"/>
+
+		<!-- ======= Touch Sensors ======= CHANGED-->
+		<touch name="Sensor_Touch_palm0top"			site="Touch_palm0top"/>
+		<touch name="Sensor_Touch_palm0bottom" 		site="Touch_palm0bottom"/>
+		<touch name="Sensor_Touch_palm1" 			site="Touch_palm1"/>
+
+
+		<touch name="Sensor_Touch_forefingertip"		site="Touch_forefingertip"/>
+		<touch name="Sensor_Touch_forefingermiddle"		site="Touch_forefingertip"/>
+		<touch name="Sensor_Touch_forefingerproximal"		site="Touch_forefingerproximal"/>
+
+		<touch name="Sensor_Touch_middlefingertip"		site="Touch_middlefingertip"/>
+		<touch name="Sensor_Touch_middlefingermiddle"		site="Touch_middlefingertip"/>
+		<touch name="Sensor_Touch_middlefingerproximal"	site="Touch_middlefingerproximal"/>
+
+		<touch name="Sensor_Touch_ringfingertip"		site="Touch_ringfingertip"/>
+		<touch name="Sensor_Touch_ringfingermiddle"		site="Touch_ringfingertip"/>
+		<touch name="Sensor_Touch_ringfingerproximal"		site="Touch_ringfingerproximal"/>
+
+		<touch name="Sensor_Touch_littlefingertip"		site="Touch_littlefingertip"/>
+		<touch name="Sensor_Touch_littlefingermiddle"		site="Touch_littlefingertip"/>
+		<touch name="Sensor_Touch_littlefingerproximal"	site="Touch_littlefingerproximal"/>
+		<touch name="Sensor_Touch_littlefingermetacarpal"	site="Touch_littlefingermetacarpal"/>
+
+
+		<touch name="Sensor_Touch_thumbtip"			site="Touch_thumbtip"/>
+	</sensor>
+	
+</mujocoinclude>
