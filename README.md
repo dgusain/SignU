@@ -130,7 +130,30 @@ The reinforcement learning process aims to train a robotic hand model to replica
 9. **Use State Dependent Exploration (`use_sde=True`)**:
    - State Dependent Exploration (SDE) is enabled to allow the agent to explore actions more efficiently. It adjusts exploration based on the state, making it more adaptable to the complexity of the environment.
 
-### Phase 2: Dynamic Ground Truth from SMPL-X JSON Files
-The second phase enhances flexibility by sourcing ground truth quaternions from SMPL-X JSON files. This allows for dynamic loading of different poses without modifying the codebase, facilitating scalability and adaptability to various hand poses.
+### Phase 2: Dynamic Ground Truth Loading from JSON
+
+In this phase, the reinforcement learning pipeline adapts to dynamically load ground truth quaternions from SMPL-X JSON files. This allows for flexibility in training the agent to replicate various hand poses, such as the ASL Letter "A".
+
+#### Key Components:
+
+1. **HandEnv Class**:
+   - The environment is built using MuJoCo for physics-based simulation.
+   - Ground truth quaternions are loaded from SMPL-X JSON files, allowing the agent to adapt to different target poses.
+   - The action space is normalized between `-1` and `1` and scaled to control the robotic hand’s actuators in MuJoCo.
+
+2. **Reward Calculation**:
+   - Rewards are based on the similarity between the hand's rendered pose (in quaternion form) and the ground truth pose. A confidence score measures this similarity, with the goal of achieving a score above a defined threshold (95).
+
+3. **RecurrentPPO Training**:
+   - The agent is trained using RecurrentPPO, which incorporates LSTM for managing sequential data and learning temporal dependencies in actions.
+   - Parallel environments (using DummyVecEnv) are used for faster training.
+   - Hyperparameters include a learning rate of `0.0001`, a clip range of `0.4`, and steps per environment update (`1024`).
+
+4. **Callback and Visualization**:
+   - A custom callback logs the average rewards every 100 episodes, tracking the agent’s learning progress.
+   - After training, the results are plotted (average reward vs episodes) and saved for analysis.
+
+#### Dynamic Ground Truth Loading:
+   - The ground truth quaternions are loaded dynamically from SMPL-X JSON files. These files provide rotation vectors for each joint, which are converted to quaternions and used as target poses for the agent to replicate.
 
 
