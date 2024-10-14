@@ -1,4 +1,4 @@
-# SignMimic:
+
 # Project: Reinforcement Learning for American Sign Language Fingerspelling in MuJoCo
 
 ## Context
@@ -62,5 +62,85 @@ This project leverages reinforcement learning to teach an agent to form various 
 - **Phase 1**: Complete dataset integration and mapping pipeline.
 - **Phase 2**: Fine-tune RL model and perform inference for fingerspelling in ASL.
 
-"""
-   
+
+## Reinforcement Learning Phase Progress
+
+This project involves simulating and controlling a robotic hand using the MuJoCo physics engine integrated with OpenAI Gym environments. The primary objective is to train a policy using Proximal Policy Optimization (PPO) to align the simulated hand's pose with predefined or dynamically loaded ground truth quaternions. The project progresses through two phases:
+
+### Phases
+#### Phase 1: Hardcoded Ground Truth Quaternions
+In the initial phase, the environment uses a predefined list of quaternions as ground truth. These quaternions represent the desired orientations for each joint in the robotic hand, serving as targets for the reinforcement learning agent to achieve.
+
+#### Phase 2: Dynamic Ground Truth from SMPL-X JSON Files
+The second phase enhances flexibility by sourcing ground truth quaternions from SMPL-X JSON files. This allows for dynamic loading of different poses without modifying the codebase, facilitating scalability and adaptability to various hand poses.
+
+### Code Structure
+#### Environment Class (HandEnv)
+The `HandEnv` class inherits from `gym.Env` and encapsulates the simulation environment, including state management, action processing, and reward computation.
+
+**Initialization**:
+- **Model Loading**: Loads the MuJoCo model from a specified XML file.
+- **Simulation Setup**: Initializes the MuJoCo simulator (`MjSim`) with the loaded model.
+- **Observation and Action Spaces**:
+  - **Observation Space**: 24-dimensional continuous space.
+  - **Action Space**: Based on actuator control ranges, normalized between -1 and 1.
+- **Ground Truth Quaternions**:
+  - **Phase 1**: Hardcoded list.
+  - **Phase 2**: Dynamically loaded from SMPL-X JSON files.
+
+#### Step Function
+Processes the agent's action by:
+- **Action Rescaling**: Transforms normalized actions back to actuator-specific ranges.
+- **Simulation Step**: Applies the rescaled actions and advances the simulation.
+- **Reward Calculation**: Computes reward based on quaternion similarity.
+- **Termination Condition**: Ends the episode if confidence score exceeds a threshold or maximum steps reached.
+
+### Reward and Confidence Calculation
+- **Confidence Score**: Measures similarity between rendered and ground truth quaternions.
+- **Reward**: Based on the average confidence score.
+
+### Key Features
+- **Dynamic Ground Truth Loading**: Allows switching from hardcoded quaternions to loading from SMPL-X JSON files.
+- **Efficient Training Pipeline**: Utilizes RecurrentPPO with optimized parameters for policy learning.
+- **Comprehensive Logging and Visualization**: Tracks and plots training rewards for performance assessment.
+
+### Installation
+```bash
+git clone https://github.com/yourusername/robotic-hand-simulation.git
+cd robotic-hand-simulation
+```
+
+#### Create a Virtual Environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+#### Install Dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Ensure `requirements.txt` includes necessary packages such as `gymnasium`, `mujoco_py`, `stable_baselines3`, `sb3_contrib`, `torch`, `numpy`, and `matplotlib`.
+
+#### Setup MuJoCo:
+1. Download MuJoCo binaries and models.
+2. Set environment variables:
+```bash
+export MUJOCO_PY_MUJOCO_PATH=/path/to/mujoco
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/mujoco/bin
+```
+
+### Usage
+1. Prepare SMPL-X JSON Files containing `right_hand_pose`.
+2. Update paths in the code to point to the MuJoCo XML model and SMPL-X JSON file.
+3. Run Training:
+```bash
+python your_training_script.py
+```
+
+### Troubleshooting
+- **MuJoCo Model Loading Errors**: Ensure the XML path is correct and MuJoCo is properly installed.
+- **JSON Parsing Issues**: Validate the JSON structure, ensuring the `right_hand_pose` key exists.
+- **Dependency Conflicts**: Use `requirements.txt` for compatible versions, or consider Docker for consistency.
+- **CUDA and GPU Issues**: Verify CUDA installation, GPU availability, and proper configuration.
