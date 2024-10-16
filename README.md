@@ -3,6 +3,13 @@
 
 ## Context
 This project leverages reinforcement learning to teach an agent to form various hand gestures for fingerspelling in American Sign Language (ASL). The agent learns to form letters like "A", "B", etc., autonomously. The primary challenge is mapping SMPLX joint data to MuJoCo for physically plausible gesture rendering, as MuJoCo accounts for realistic physics unlike SMPLX where finger collisions can occur.
+<table>
+<tr>
+  <td width="25%">
+     <img src="https://github.com/dgusain/SignU/blob/main/ASL_AB_mj_git.gif" alt="SignMimic" width="250" height="200">  
+  </td>
+</tr>
+</table>
 
 ### Roadmap:
 - **Phase 1**: Dataset preparation and integration with RL framework (Fall 2024)
