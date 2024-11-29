@@ -1,0 +1,1334 @@
+Script started on 2024-10-22 23:40:29-04:00 [TERM="screen.xterm-256color" TTY="/dev/pts/15" COLUMNS="282" LINES="75"]
+[4mdeepbull5[24m:[1m~/Bot_hand/codes[0m> conda activate mujoco_test
+(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand/codes[0m> python code1_!_[K[K1_residual_custom.py
+GPU 6: Using cuda device
+INFO:root:Attempting to load Mujoco model from: /home/easgrad/dgusain/Bot_hand/bot_hand.xml
+INFO:root:Mujoco model loaded successfully.
+INFO:root:Attempting to load Mujoco model from: /home/easgrad/dgusain/Bot_hand/bot_hand.xml
+INFO:root:Mujoco model loaded successfully.
+INFO:root:Attempting to load Mujoco model from: /home/easgrad/dgusain/Bot_hand/bot_hand.xml
+INFO:root:Mujoco model loaded successfully.
+INFO:root:Attempting to load Mujoco model from: /home/easgrad/dgusain/Bot_hand/bot_hand.xml
+INFO:root:Mujoco model loaded successfully.
+Using cuda device
+/home/easgrad/dgusain/anaconda3/envs/mujoco_test/lib/python3.8/site-packages/stable_baselines3/common/policies.py:486: UserWarning: As shared layers in the mlp_extractor are removed since SB3 v1.8.0, you should now pass directly a dictionary and not a list (net_arch=dict(pi=..., vf=...) instead of net_arch=[dict(pi=..., vf=...)])
+  warnings.warn(
+Iteration: 2 | Episodes: 100 | Median Reward: 14.81 | Max Reward: 30.32
+Iteration: 4 | Episodes: 200 | Median Reward: 18.40 | Max Reward: 35.09
+Iteration: 7 | Episodes: 300 | Median Reward: 19.15 | Max Reward: 37.22
+Iteration: 9 | Episodes: 400 | Median Reward: 14.78 | Max Reward: 37.22
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -85.6      |
+| time/                   |            |
+|    fps                  | 183        |
+|    iterations           | 10         |
+|    time_elapsed         | 222        |
+|    total_timesteps      | 40960      |
+| train/                  |            |
+|    approx_kl            | 0.16890112 |
+|    clip_fraction        | 0.131      |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -76.2      |
+|    explained_variance   | 0.0192     |
+|    learning_rate        | 0.0005     |
+|    loss                 | 91.8       |
+|    n_updates            | 90         |
+|    policy_gradient_loss | 0.0249     |
+|    std                  | 1          |
+|    value_loss           | 207        |
+----------------------------------------
+Iteration: 12 | Episodes: 500 | Median Reward: 16.57 | Max Reward: 37.22
+Iteration: 14 | Episodes: 600 | Median Reward: 14.09 | Max Reward: 43.09
+Iteration: 17 | Episodes: 700 | Median Reward: 21.34 | Max Reward: 43.09
+Iteration: 19 | Episodes: 800 | Median Reward: 13.23 | Max Reward: 43.09
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -85.2        |
+| time/                   |              |
+|    fps                  | 191          |
+|    iterations           | 20           |
+|    time_elapsed         | 427          |
+|    total_timesteps      | 81920        |
+| train/                  |              |
+|    approx_kl            | 0.0058201747 |
+|    clip_fraction        | 0.00596      |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -61.2        |
+|    explained_variance   | 0.491        |
+|    learning_rate        | 0.0005       |
+|    loss                 | 74.2         |
+|    n_updates            | 190          |
+|    policy_gradient_loss | -0.00577     |
+|    std                  | 1.01         |
+|    value_loss           | 148          |
+------------------------------------------
+Iteration: 22 | Episodes: 900 | Median Reward: 12.57 | Max Reward: 43.09
+Iteration: 24 | Episodes: 1000 | Median Reward: 16.19 | Max Reward: 43.09
+Iteration: 27 | Episodes: 1100 | Median Reward: 7.94 | Max Reward: 43.09
+Iteration: 29 | Episodes: 1200 | Median Reward: 17.16 | Max Reward: 43.09
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -85.5      |
+| time/                   |            |
+|    fps                  | 194        |
+|    iterations           | 30         |
+|    time_elapsed         | 632        |
+|    total_timesteps      | 122880     |
+| train/                  |            |
+|    approx_kl            | 0.02390759 |
+|    clip_fraction        | 0.0743     |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -71.2      |
+|    explained_variance   | 0.962      |
+|    learning_rate        | 0.0005     |
+|    loss                 | -1.64      |
+|    n_updates            | 290        |
+|    policy_gradient_loss | -0.01      |
+|    std                  | 1.01       |
+|    value_loss           | 15         |
+----------------------------------------
+Iteration: 32 | Episodes: 1300 | Median Reward: 20.56 | Max Reward: 43.09
+Iteration: 34 | Episodes: 1400 | Median Reward: 18.19 | Max Reward: 43.09
+Iteration: 36 | Episodes: 1500 | Median Reward: 19.99 | Max Reward: 43.09
+Iteration: 39 | Episodes: 1600 | Median Reward: 14.96 | Max Reward: 43.09
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -84.5      |
+| time/                   |            |
+|    fps                  | 195        |
+|    iterations           | 40         |
+|    time_elapsed         | 836        |
+|    total_timesteps      | 163840     |
+| train/                  |            |
+|    approx_kl            | 0.10464773 |
+|    clip_fraction        | 0.27       |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -95.3      |
+|    explained_variance   | 0.953      |
+|    learning_rate        | 0.0005     |
+|    loss                 | -5.7       |
+|    n_updates            | 390        |
+|    policy_gradient_loss | -0.0259    |
+|    std                  | 1.01       |
+|    value_loss           | 12.7       |
+----------------------------------------
+Iteration: 41 | Episodes: 1700 | Median Reward: 16.79 | Max Reward: 43.09
+Iteration: 44 | Episodes: 1800 | Median Reward: 14.43 | Max Reward: 43.09
+Iteration: 46 | Episodes: 1900 | Median Reward: 19.56 | Max Reward: 43.09
+Iteration: 49 | Episodes: 2000 | Median Reward: 18.83 | Max Reward: 43.09
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -82.3       |
+| time/                   |             |
+|    fps                  | 197         |
+|    iterations           | 50          |
+|    time_elapsed         | 1037        |
+|    total_timesteps      | 204800      |
+| train/                  |             |
+|    approx_kl            | 0.042328957 |
+|    clip_fraction        | 0.149       |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -110        |
+|    explained_variance   | 0.952       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -5.27       |
+|    n_updates            | 490         |
+|    policy_gradient_loss | -0.0262     |
+|    std                  | 1.01        |
+|    value_loss           | 27.9        |
+-----------------------------------------
+Iteration: 51 | Episodes: 2100 | Median Reward: 18.79 | Max Reward: 43.09
+Iteration: 54 | Episodes: 2200 | Median Reward: 15.89 | Max Reward: 43.09
+Iteration: 56 | Episodes: 2300 | Median Reward: 14.51 | Max Reward: 43.09
+Iteration: 59 | Episodes: 2400 | Median Reward: 21.46 | Max Reward: 43.09
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -75.4      |
+| time/                   |            |
+|    fps                  | 197        |
+|    iterations           | 60         |
+|    time_elapsed         | 1243       |
+|    total_timesteps      | 245760     |
+| train/                  |            |
+|    approx_kl            | 0.37080446 |
+|    clip_fraction        | 0.517      |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -126       |
+|    explained_variance   | 0.981      |
+|    learning_rate        | 0.0005     |
+|    loss                 | -9.43      |
+|    n_updates            | 590        |
+|    policy_gradient_loss | -0.0892    |
+|    std                  | 1.01       |
+|    value_loss           | 10.6       |
+----------------------------------------
+Iteration: 61 | Episodes: 2500 | Median Reward: 25.28 | Max Reward: 43.09
+Iteration: 64 | Episodes: 2600 | Median Reward: 22.88 | Max Reward: 43.09
+Iteration: 66 | Episodes: 2700 | Median Reward: 22.85 | Max Reward: 43.09
+Iteration: 69 | Episodes: 2800 | Median Reward: 27.20 | Max Reward: 43.09
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -74.3      |
+| time/                   |            |
+|    fps                  | 196        |
+|    iterations           | 70         |
+|    time_elapsed         | 1457       |
+|    total_timesteps      | 286720     |
+| train/                  |            |
+|    approx_kl            | 0.01148098 |
+|    clip_fraction        | 0.0218     |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -133       |
+|    explained_variance   | 0.994      |
+|    learning_rate        | 0.0005     |
+|    loss                 | -11.4      |
+|    n_updates            | 690        |
+|    policy_gradient_loss | 0.0071     |
+|    std                  | 1.01       |
+|    value_loss           | 6.44       |
+----------------------------------------
+Iteration: 71 | Episodes: 2900 | Median Reward: 21.25 | Max Reward: 43.09
+Iteration: 73 | Episodes: 3000 | Median Reward: 23.80 | Max Reward: 43.09
+Iteration: 76 | Episodes: 3100 | Median Reward: 21.26 | Max Reward: 43.09
+Iteration: 78 | Episodes: 3200 | Median Reward: 28.41 | Max Reward: 43.09
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -74.9       |
+| time/                   |             |
+|    fps                  | 197         |
+|    iterations           | 80          |
+|    time_elapsed         | 1661        |
+|    total_timesteps      | 327680      |
+| train/                  |             |
+|    approx_kl            | 0.019626314 |
+|    clip_fraction        | 0.0752      |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -147        |
+|    explained_variance   | 0.99        |
+|    learning_rate        | 0.0005      |
+|    loss                 | -12.8       |
+|    n_updates            | 790         |
+|    policy_gradient_loss | -0.018      |
+|    std                  | 1.01        |
+|    value_loss           | 6.97        |
+-----------------------------------------
+Iteration: 81 | Episodes: 3300 | Median Reward: 24.34 | Max Reward: 43.09
+Iteration: 83 | Episodes: 3400 | Median Reward: 21.80 | Max Reward: 43.09
+Iteration: 86 | Episodes: 3500 | Median Reward: 29.01 | Max Reward: 43.09
+Iteration: 88 | Episodes: 3600 | Median Reward: 30.44 | Max Reward: 43.09
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -71.5       |
+| time/                   |             |
+|    fps                  | 196         |
+|    iterations           | 90          |
+|    time_elapsed         | 1872        |
+|    total_timesteps      | 368640      |
+| train/                  |             |
+|    approx_kl            | 0.024106428 |
+|    clip_fraction        | 0.0466      |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -159        |
+|    explained_variance   | 0.987       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -11.6       |
+|    n_updates            | 890         |
+|    policy_gradient_loss | -0.0108     |
+|    std                  | 1.02        |
+|    value_loss           | 5.74        |
+-----------------------------------------
+Iteration: 91 | Episodes: 3700 | Median Reward: 29.37 | Max Reward: 43.09
+Iteration: 93 | Episodes: 3800 | Median Reward: 32.49 | Max Reward: 43.09
+Iteration: 96 | Episodes: 3900 | Median Reward: 28.39 | Max Reward: 43.09
+Iteration: 98 | Episodes: 4000 | Median Reward: 26.78 | Max Reward: 43.09
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -76.1       |
+| time/                   |             |
+|    fps                  | 197         |
+|    iterations           | 100         |
+|    time_elapsed         | 2070        |
+|    total_timesteps      | 409600      |
+| train/                  |             |
+|    approx_kl            | 0.011041777 |
+|    clip_fraction        | 0.000488    |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -163        |
+|    explained_variance   | 0.989       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -15.7       |
+|    n_updates            | 990         |
+|    policy_gradient_loss | -0.0125     |
+|    std                  | 1.02        |
+|    value_loss           | 3.08        |
+-----------------------------------------
+Iteration: 101 | Episodes: 4100 | Median Reward: 22.72 | Max Reward: 43.09
+Iteration: 103 | Episodes: 4200 | Median Reward: 32.40 | Max Reward: 46.60
+Iteration: 106 | Episodes: 4300 | Median Reward: 28.18 | Max Reward: 46.60
+Iteration: 108 | Episodes: 4400 | Median Reward: 29.98 | Max Reward: 46.87
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -68.1       |
+| time/                   |             |
+|    fps                  | 197         |
+|    iterations           | 110         |
+|    time_elapsed         | 2277        |
+|    total_timesteps      | 450560      |
+| train/                  |             |
+|    approx_kl            | 0.101663366 |
+|    clip_fraction        | 0.37        |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -169        |
+|    explained_variance   | 0.998       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -15.1       |
+|    n_updates            | 1090        |
+|    policy_gradient_loss | -0.0503     |
+|    std                  | 1.02        |
+|    value_loss           | 2.35        |
+-----------------------------------------
+Iteration: 110 | Episodes: 4500 | Median Reward: 32.64 | Max Reward: 46.87
+Iteration: 113 | Episodes: 4600 | Median Reward: 29.17 | Max Reward: 46.87
+Iteration: 115 | Episodes: 4700 | Median Reward: 34.55 | Max Reward: 46.87
+Iteration: 118 | Episodes: 4800 | Median Reward: 32.26 | Max Reward: 47.21
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -66.3      |
+| time/                   |            |
+|    fps                  | 197        |
+|    iterations           | 120        |
+|    time_elapsed         | 2488       |
+|    total_timesteps      | 491520     |
+| train/                  |            |
+|    approx_kl            | 0.14738765 |
+|    clip_fraction        | 0.0222     |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -179       |
+|    explained_variance   | 0.996      |
+|    learning_rate        | 0.0005     |
+|    loss                 | -16.5      |
+|    n_updates            | 1190       |
+|    policy_gradient_loss | -0.00954   |
+|    std                  | 1.02       |
+|    value_loss           | 2.81       |
+----------------------------------------
+Iteration: 120 | Episodes: 4900 | Median Reward: 32.20 | Max Reward: 47.21
+Iteration: 123 | Episodes: 5000 | Median Reward: 33.75 | Max Reward: 47.21
+Iteration: 125 | Episodes: 5100 | Median Reward: 31.27 | Max Reward: 47.21
+Iteration: 128 | Episodes: 5200 | Median Reward: 29.13 | Max Reward: 47.21
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -66.2        |
+| time/                   |              |
+|    fps                  | 197          |
+|    iterations           | 130          |
+|    time_elapsed         | 2695         |
+|    total_timesteps      | 532480       |
+| train/                  |              |
+|    approx_kl            | 0.0020794498 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -181         |
+|    explained_variance   | 0.988        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -16.5        |
+|    n_updates            | 1290         |
+|    policy_gradient_loss | -0.00443     |
+|    std                  | 1.02         |
+|    value_loss           | 5.01         |
+------------------------------------------
+Iteration: 130 | Episodes: 5300 | Median Reward: 32.42 | Max Reward: 47.21
+Iteration: 133 | Episodes: 5400 | Median Reward: 37.06 | Max Reward: 47.21
+Iteration: 135 | Episodes: 5500 | Median Reward: 35.25 | Max Reward: 47.21
+Iteration: 138 | Episodes: 5600 | Median Reward: 33.21 | Max Reward: 47.66
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -66.5        |
+| time/                   |              |
+|    fps                  | 197          |
+|    iterations           | 140          |
+|    time_elapsed         | 2906         |
+|    total_timesteps      | 573440       |
+| train/                  |              |
+|    approx_kl            | 0.0020904746 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -186         |
+|    explained_variance   | 0.977        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -16.6        |
+|    n_updates            | 1390         |
+|    policy_gradient_loss | -0.000216    |
+|    std                  | 1.02         |
+|    value_loss           | 7.37         |
+------------------------------------------
+Iteration: 140 | Episodes: 5700 | Median Reward: 33.18 | Max Reward: 47.66
+Iteration: 143 | Episodes: 5800 | Median Reward: 34.52 | Max Reward: 47.66
+Iteration: 145 | Episodes: 5900 | Median Reward: 33.08 | Max Reward: 47.66
+Iteration: 147 | Episodes: 6000 | Median Reward: 31.71 | Max Reward: 47.66
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -66.6       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 150         |
+|    time_elapsed         | 3102        |
+|    total_timesteps      | 614400      |
+| train/                  |             |
+|    approx_kl            | 0.009408914 |
+|    clip_fraction        | 0.0022      |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -188        |
+|    explained_variance   | 0.996       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -18.2       |
+|    n_updates            | 1490        |
+|    policy_gradient_loss | -0.00915    |
+|    std                  | 1.02        |
+|    value_loss           | 1.8         |
+-----------------------------------------
+Iteration: 150 | Episodes: 6100 | Median Reward: 35.72 | Max Reward: 47.66
+Iteration: 152 | Episodes: 6200 | Median Reward: 39.42 | Max Reward: 47.66
+Iteration: 155 | Episodes: 6300 | Median Reward: 36.79 | Max Reward: 47.66
+Iteration: 157 | Episodes: 6400 | Median Reward: 38.93 | Max Reward: 47.66
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -65.6       |
+| time/                   |             |
+|    fps                  | 197         |
+|    iterations           | 160         |
+|    time_elapsed         | 3310        |
+|    total_timesteps      | 655360      |
+| train/                  |             |
+|    approx_kl            | 0.014598834 |
+|    clip_fraction        | 0.00161     |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -191        |
+|    explained_variance   | 0.994       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -15.8       |
+|    n_updates            | 1590        |
+|    policy_gradient_loss | -0.0169     |
+|    std                  | 1.03        |
+|    value_loss           | 5.04        |
+-----------------------------------------
+Iteration: 160 | Episodes: 6500 | Median Reward: 35.54 | Max Reward: 47.66
+Iteration: 162 | Episodes: 6600 | Median Reward: 35.16 | Max Reward: 47.66
+Iteration: 165 | Episodes: 6700 | Median Reward: 39.09 | Max Reward: 47.66
+Iteration: 167 | Episodes: 6800 | Median Reward: 39.97 | Max Reward: 47.66
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -63.2       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 170         |
+|    time_elapsed         | 3516        |
+|    total_timesteps      | 696320      |
+| train/                  |             |
+|    approx_kl            | 0.010643553 |
+|    clip_fraction        | 0           |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -195        |
+|    explained_variance   | 0.996       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -17.6       |
+|    n_updates            | 1690        |
+|    policy_gradient_loss | -0.0192     |
+|    std                  | 1.03        |
+|    value_loss           | 6.15        |
+-----------------------------------------
+Iteration: 170 | Episodes: 6900 | Median Reward: 38.04 | Max Reward: 47.66
+Iteration: 172 | Episodes: 7000 | Median Reward: 35.23 | Max Reward: 47.66
+Iteration: 175 | Episodes: 7100 | Median Reward: 33.90 | Max Reward: 47.66
+Iteration: 177 | Episodes: 7200 | Median Reward: 39.06 | Max Reward: 47.66
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -61.7        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 180          |
+|    time_elapsed         | 3720         |
+|    total_timesteps      | 737280       |
+| train/                  |              |
+|    approx_kl            | 0.0018716017 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -198         |
+|    explained_variance   | 0.999        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -19.1        |
+|    n_updates            | 1790         |
+|    policy_gradient_loss | -0.00109     |
+|    std                  | 1.03         |
+|    value_loss           | 1.69         |
+------------------------------------------
+Iteration: 180 | Episodes: 7300 | Median Reward: 38.80 | Max Reward: 47.66
+Iteration: 182 | Episodes: 7400 | Median Reward: 40.78 | Max Reward: 47.66
+Iteration: 184 | Episodes: 7500 | Median Reward: 38.13 | Max Reward: 47.66
+Iteration: 187 | Episodes: 7600 | Median Reward: 41.03 | Max Reward: 47.66
+Iteration: 189 | Episodes: 7700 | Median Reward: 38.13 | Max Reward: 47.66
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -63.4       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 190         |
+|    time_elapsed         | 3928        |
+|    total_timesteps      | 778240      |
+| train/                  |             |
+|    approx_kl            | 0.009558698 |
+|    clip_fraction        | 0           |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -200        |
+|    explained_variance   | 0.992       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -16.1       |
+|    n_updates            | 1890        |
+|    policy_gradient_loss | -0.0134     |
+|    std                  | 1.03        |
+|    value_loss           | 3.59        |
+-----------------------------------------
+Iteration: 192 | Episodes: 7800 | Median Reward: 37.09 | Max Reward: 47.66
+Iteration: 194 | Episodes: 7900 | Median Reward: 42.57 | Max Reward: 47.66
+Iteration: 197 | Episodes: 8000 | Median Reward: 42.55 | Max Reward: 47.90
+Iteration: 199 | Episodes: 8100 | Median Reward: 43.41 | Max Reward: 47.90
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -56.7        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 200          |
+|    time_elapsed         | 4127         |
+|    total_timesteps      | 819200       |
+| train/                  |              |
+|    approx_kl            | 0.0009646359 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -203         |
+|    explained_variance   | 0.998        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -18.6        |
+|    n_updates            | 1990         |
+|    policy_gradient_loss | -0.00122     |
+|    std                  | 1.03         |
+|    value_loss           | 1.61         |
+------------------------------------------
+Iteration: 202 | Episodes: 8200 | Median Reward: 38.67 | Max Reward: 47.90
+Iteration: 204 | Episodes: 8300 | Median Reward: 38.31 | Max Reward: 47.90
+Iteration: 207 | Episodes: 8400 | Median Reward: 41.40 | Max Reward: 47.90
+Iteration: 209 | Episodes: 8500 | Median Reward: 37.09 | Max Reward: 47.90
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -62.2      |
+| time/                   |            |
+|    fps                  | 198        |
+|    iterations           | 210        |
+|    time_elapsed         | 4336       |
+|    total_timesteps      | 860160     |
+| train/                  |            |
+|    approx_kl            | 0.01989516 |
+|    clip_fraction        | 0.0515     |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -204       |
+|    explained_variance   | 0.991      |
+|    learning_rate        | 0.0005     |
+|    loss                 | -18.9      |
+|    n_updates            | 2090       |
+|    policy_gradient_loss | -0.0132    |
+|    std                  | 1.03       |
+|    value_loss           | 5.13       |
+----------------------------------------
+Iteration: 212 | Episodes: 8600 | Median Reward: 39.66 | Max Reward: 47.90
+Iteration: 214 | Episodes: 8700 | Median Reward: 42.23 | Max Reward: 47.90
+Iteration: 216 | Episodes: 8800 | Median Reward: 42.46 | Max Reward: 47.90
+Iteration: 219 | Episodes: 8900 | Median Reward: 36.14 | Max Reward: 47.90
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -61.7        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 220          |
+|    time_elapsed         | 4549         |
+|    total_timesteps      | 901120       |
+| train/                  |              |
+|    approx_kl            | 0.0029830732 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -208         |
+|    explained_variance   | 0.995        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -19.3        |
+|    n_updates            | 2190         |
+|    policy_gradient_loss | -0.00506     |
+|    std                  | 1.04         |
+|    value_loss           | 3.78         |
+------------------------------------------
+Iteration: 221 | Episodes: 9000 | Median Reward: 39.24 | Max Reward: 47.90
+Iteration: 224 | Episodes: 9100 | Median Reward: 38.85 | Max Reward: 47.90
+Iteration: 226 | Episodes: 9200 | Median Reward: 39.20 | Max Reward: 47.90
+Iteration: 229 | Episodes: 9300 | Median Reward: 41.15 | Max Reward: 47.90
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -58.7       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 230         |
+|    time_elapsed         | 4756        |
+|    total_timesteps      | 942080      |
+| train/                  |             |
+|    approx_kl            | 0.029529111 |
+|    clip_fraction        | 0.151       |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -210        |
+|    explained_variance   | 0.999       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -20         |
+|    n_updates            | 2290        |
+|    policy_gradient_loss | -0.0135     |
+|    std                  | 1.04        |
+|    value_loss           | 0.897       |
+-----------------------------------------
+Iteration: 231 | Episodes: 9400 | Median Reward: 38.11 | Max Reward: 47.90
+Iteration: 234 | Episodes: 9500 | Median Reward: 42.79 | Max Reward: 47.90
+Iteration: 236 | Episodes: 9600 | Median Reward: 40.23 | Max Reward: 47.90
+Iteration: 239 | Episodes: 9700 | Median Reward: 39.94 | Max Reward: 47.90
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -60.1       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 240         |
+|    time_elapsed         | 4963        |
+|    total_timesteps      | 983040      |
+| train/                  |             |
+|    approx_kl            | 0.004035833 |
+|    clip_fraction        | 0           |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -213        |
+|    explained_variance   | 0.999       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -21.1       |
+|    n_updates            | 2390        |
+|    policy_gradient_loss | -0.0113     |
+|    std                  | 1.04        |
+|    value_loss           | 2.25        |
+-----------------------------------------
+Iteration: 241 | Episodes: 9800 | Median Reward: 42.72 | Max Reward: 47.90
+Iteration: 244 | Episodes: 9900 | Median Reward: 40.04 | Max Reward: 47.90
+Iteration: 246 | Episodes: 10000 | Median Reward: 41.69 | Max Reward: 47.90
+Iteration: 249 | Episodes: 10100 | Median Reward: 44.26 | Max Reward: 47.90
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -57.1        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 250          |
+|    time_elapsed         | 5170         |
+|    total_timesteps      | 1024000      |
+| train/                  |              |
+|    approx_kl            | 0.0061450186 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -214         |
+|    explained_variance   | 0.999        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -21.2        |
+|    n_updates            | 2490         |
+|    policy_gradient_loss | -0.00213     |
+|    std                  | 1.04         |
+|    value_loss           | 2.29         |
+------------------------------------------
+Iteration: 251 | Episodes: 10200 | Median Reward: 42.50 | Max Reward: 47.90
+Iteration: 253 | Episodes: 10300 | Median Reward: 42.70 | Max Reward: 47.90
+Iteration: 256 | Episodes: 10400 | Median Reward: 43.94 | Max Reward: 47.90
+Iteration: 258 | Episodes: 10500 | Median Reward: 40.77 | Max Reward: 47.90
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -59        |
+| time/                   |            |
+|    fps                  | 198        |
+|    iterations           | 260        |
+|    time_elapsed         | 5364       |
+|    total_timesteps      | 1064960    |
+| train/                  |            |
+|    approx_kl            | 0.07596931 |
+|    clip_fraction        | 0.175      |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -215       |
+|    explained_variance   | 0.999      |
+|    learning_rate        | 0.0005     |
+|    loss                 | -21        |
+|    n_updates            | 2590       |
+|    policy_gradient_loss | -0.0508    |
+|    std                  | 1.05       |
+|    value_loss           | 1.35       |
+----------------------------------------
+Iteration: 261 | Episodes: 10600 | Median Reward: 42.82 | Max Reward: 47.90
+Iteration: 263 | Episodes: 10700 | Median Reward: 43.31 | Max Reward: 47.90
+Iteration: 266 | Episodes: 10800 | Median Reward: 42.58 | Max Reward: 47.90
+Iteration: 268 | Episodes: 10900 | Median Reward: 41.00 | Max Reward: 47.90
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -58.1       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 270         |
+|    time_elapsed         | 5576        |
+|    total_timesteps      | 1105920     |
+| train/                  |             |
+|    approx_kl            | 0.047310725 |
+|    clip_fraction        | 0.151       |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -217        |
+|    explained_variance   | 0.997       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -21.3       |
+|    n_updates            | 2690        |
+|    policy_gradient_loss | -0.0183     |
+|    std                  | 1.05        |
+|    value_loss           | 1.18        |
+-----------------------------------------
+Iteration: 271 | Episodes: 11000 | Median Reward: 43.93 | Max Reward: 47.90
+Iteration: 273 | Episodes: 11100 | Median Reward: 41.15 | Max Reward: 47.90
+Iteration: 276 | Episodes: 11200 | Median Reward: 43.39 | Max Reward: 47.90
+Iteration: 278 | Episodes: 11300 | Median Reward: 44.35 | Max Reward: 47.90
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -57.7       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 280         |
+|    time_elapsed         | 5783        |
+|    total_timesteps      | 1146880     |
+| train/                  |             |
+|    approx_kl            | 0.008229905 |
+|    clip_fraction        | 0.000244    |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -219        |
+|    explained_variance   | 0.999       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -20.6       |
+|    n_updates            | 2790        |
+|    policy_gradient_loss | -0.00693    |
+|    std                  | 1.05        |
+|    value_loss           | 9.18        |
+-----------------------------------------
+Iteration: 281 | Episodes: 11400 | Median Reward: 43.46 | Max Reward: 47.90
+Iteration: 283 | Episodes: 11500 | Median Reward: 43.66 | Max Reward: 47.90
+Iteration: 286 | Episodes: 11600 | Median Reward: 44.25 | Max Reward: 47.95
+Iteration: 288 | Episodes: 11700 | Median Reward: 44.25 | Max Reward: 47.95
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 100          |
+|    ep_rew_mean          | -57.1        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 290          |
+|    time_elapsed         | 5993         |
+|    total_timesteps      | 1187840      |
+| train/                  |              |
+|    approx_kl            | 0.0035608904 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -219         |
+|    explained_variance   | 0.998        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -21.2        |
+|    n_updates            | 2890         |
+|    policy_gradient_loss | -0.0103      |
+|    std                  | 1.05         |
+|    value_loss           | 1.99         |
+------------------------------------------
+Iteration: 290 | Episodes: 11800 | Median Reward: 43.05 | Max Reward: 49.05
+Iteration: 293 | Episodes: 11900 | Median Reward: 43.82 | Max Reward: 49.05
+Iteration: 295 | Episodes: 12000 | Median Reward: 42.82 | Max Reward: 49.05
+Iteration: 298 | Episodes: 12100 | Median Reward: 43.94 | Max Reward: 49.05
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -55.4       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 300         |
+|    time_elapsed         | 6200        |
+|    total_timesteps      | 1228800     |
+| train/                  |             |
+|    approx_kl            | 0.011858784 |
+|    clip_fraction        | 0           |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -222        |
+|    explained_variance   | 1           |
+|    learning_rate        | 0.0005      |
+|    loss                 | -21.5       |
+|    n_updates            | 2990        |
+|    policy_gradient_loss | -0.0111     |
+|    std                  | 1.06        |
+|    value_loss           | 1.97        |
+-----------------------------------------
+Iteration: 300 | Episodes: 12200 | Median Reward: 45.65 | Max Reward: 49.05
+Iteration: 303 | Episodes: 12300 | Median Reward: 43.31 | Max Reward: 49.05
+Iteration: 305 | Episodes: 12400 | Median Reward: 42.58 | Max Reward: 49.05
+Iteration: 308 | Episodes: 12500 | Median Reward: 43.67 | Max Reward: 49.05
+----------------------------------------
+| rollout/                |            |
+|    ep_len_mean          | 101        |
+|    ep_rew_mean          | -56.5      |
+| time/                   |            |
+|    fps                  | 198        |
+|    iterations           | 310        |
+|    time_elapsed         | 6404       |
+|    total_timesteps      | 1269760    |
+| train/                  |            |
+|    approx_kl            | 0.00278923 |
+|    clip_fraction        | 0          |
+|    clip_range           | 0.3        |
+|    entropy_loss         | -224       |
+|    explained_variance   | 0.995      |
+|    learning_rate        | 0.0005     |
+|    loss                 | -21.7      |
+|    n_updates            | 3090       |
+|    policy_gradient_loss | -0.00181   |
+|    std                  | 1.06       |
+|    value_loss           | 1.76       |
+----------------------------------------
+Iteration: 310 | Episodes: 12600 | Median Reward: 44.07 | Max Reward: 49.05
+Iteration: 313 | Episodes: 12700 | Median Reward: 42.71 | Max Reward: 49.05
+Iteration: 315 | Episodes: 12800 | Median Reward: 44.00 | Max Reward: 49.05
+Iteration: 318 | Episodes: 12900 | Median Reward: 45.71 | Max Reward: 49.05
+-------------------------------------------
+| rollout/                |               |
+|    ep_len_mean          | 101           |
+|    ep_rew_mean          | -55.7         |
+| time/                   |               |
+|    fps                  | 198           |
+|    iterations           | 320           |
+|    time_elapsed         | 6612          |
+|    total_timesteps      | 1310720       |
+| train/                  |               |
+|    approx_kl            | 3.3344462e-05 |
+|    clip_fraction        | 0             |
+|    clip_range           | 0.3           |
+|    entropy_loss         | -225          |
+|    explained_variance   | 0.998         |
+|    learning_rate        | 0.0005        |
+|    loss                 | -20.7         |
+|    n_updates            | 3190          |
+|    policy_gradient_loss | 0.00016       |
+|    std                  | 1.06          |
+|    value_loss           | 8.74          |
+-------------------------------------------
+Iteration: 320 | Episodes: 13000 | Median Reward: 43.90 | Max Reward: 49.05
+Iteration: 323 | Episodes: 13100 | Median Reward: 42.68 | Max Reward: 49.05
+Iteration: 325 | Episodes: 13200 | Median Reward: 41.60 | Max Reward: 49.05
+Iteration: 327 | Episodes: 13300 | Median Reward: 42.81 | Max Reward: 49.05
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -55.5        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 330          |
+|    time_elapsed         | 6822         |
+|    total_timesteps      | 1351680      |
+| train/                  |              |
+|    approx_kl            | 0.0027041964 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -226         |
+|    explained_variance   | 0.998        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -21.5        |
+|    n_updates            | 3290         |
+|    policy_gradient_loss | -0.0054      |
+|    std                  | 1.06         |
+|    value_loss           | 1.99         |
+------------------------------------------
+Iteration: 330 | Episodes: 13400 | Median Reward: 44.57 | Max Reward: 49.05
+Iteration: 332 | Episodes: 13500 | Median Reward: 44.38 | Max Reward: 49.05
+Iteration: 335 | Episodes: 13600 | Median Reward: 43.25 | Max Reward: 49.05
+Iteration: 337 | Episodes: 13700 | Median Reward: 44.70 | Max Reward: 49.05
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -56.4        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 340          |
+|    time_elapsed         | 7031         |
+|    total_timesteps      | 1392640      |
+| train/                  |              |
+|    approx_kl            | 0.0009592555 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -227         |
+|    explained_variance   | 0.999        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -22.3        |
+|    n_updates            | 3390         |
+|    policy_gradient_loss | -0.0019      |
+|    std                  | 1.07         |
+|    value_loss           | 1.08         |
+------------------------------------------
+Iteration: 340 | Episodes: 13800 | Median Reward: 44.48 | Max Reward: 49.05
+Iteration: 342 | Episodes: 13900 | Median Reward: 44.18 | Max Reward: 49.05
+Iteration: 345 | Episodes: 14000 | Median Reward: 46.37 | Max Reward: 49.05
+Iteration: 347 | Episodes: 14100 | Median Reward: 43.46 | Max Reward: 49.05
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 100         |
+|    ep_rew_mean          | -54.3       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 350         |
+|    time_elapsed         | 7239        |
+|    total_timesteps      | 1433600     |
+| train/                  |             |
+|    approx_kl            | 0.022623176 |
+|    clip_fraction        | 0.0745      |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -229        |
+|    explained_variance   | 0.985       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -17.9       |
+|    n_updates            | 3490        |
+|    policy_gradient_loss | -0.003      |
+|    std                  | 1.07        |
+|    value_loss           | 10.3        |
+-----------------------------------------
+Iteration: 350 | Episodes: 14200 | Median Reward: 46.29 | Max Reward: 49.10
+Iteration: 352 | Episodes: 14300 | Median Reward: 46.30 | Max Reward: 49.10
+Iteration: 355 | Episodes: 14400 | Median Reward: 43.08 | Max Reward: 49.10
+Iteration: 357 | Episodes: 14500 | Median Reward: 44.88 | Max Reward: 49.10
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -56.2        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 360          |
+|    time_elapsed         | 7438         |
+|    total_timesteps      | 1474560      |
+| train/                  |              |
+|    approx_kl            | 0.0030173624 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -231         |
+|    explained_variance   | 0.999        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -21.3        |
+|    n_updates            | 3590         |
+|    policy_gradient_loss | -0.00537     |
+|    std                  | 1.07         |
+|    value_loss           | 1.15         |
+------------------------------------------
+Iteration: 360 | Episodes: 14600 | Median Reward: 43.54 | Max Reward: 49.10
+Iteration: 362 | Episodes: 14700 | Median Reward: 44.60 | Max Reward: 49.10
+Iteration: 364 | Episodes: 14800 | Median Reward: 43.32 | Max Reward: 49.10
+Iteration: 367 | Episodes: 14900 | Median Reward: 46.16 | Max Reward: 49.10
+Iteration: 369 | Episodes: 15000 | Median Reward: 47.07 | Max Reward: 49.10
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -54.6       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 370         |
+|    time_elapsed         | 7645        |
+|    total_timesteps      | 1515520     |
+| train/                  |             |
+|    approx_kl            | 0.003784125 |
+|    clip_fraction        | 0           |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -231        |
+|    explained_variance   | 0.999       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -21.5       |
+|    n_updates            | 3690        |
+|    policy_gradient_loss | -0.00429    |
+|    std                  | 1.08        |
+|    value_loss           | 1.57        |
+-----------------------------------------
+Iteration: 372 | Episodes: 15100 | Median Reward: 46.72 | Max Reward: 49.10
+Iteration: 374 | Episodes: 15200 | Median Reward: 44.17 | Max Reward: 49.10
+Iteration: 377 | Episodes: 15300 | Median Reward: 44.25 | Max Reward: 49.10
+Iteration: 379 | Episodes: 15400 | Median Reward: 43.90 | Max Reward: 49.10
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -56.3        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 380          |
+|    time_elapsed         | 7856         |
+|    total_timesteps      | 1556480      |
+| train/                  |              |
+|    approx_kl            | 0.0038950476 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -233         |
+|    explained_variance   | 1            |
+|    learning_rate        | 0.0005       |
+|    loss                 | -23          |
+|    n_updates            | 3790         |
+|    policy_gradient_loss | -0.00255     |
+|    std                  | 1.08         |
+|    value_loss           | 0.848        |
+------------------------------------------
+Iteration: 382 | Episodes: 15500 | Median Reward: 43.92 | Max Reward: 49.10
+Iteration: 384 | Episodes: 15600 | Median Reward: 46.31 | Max Reward: 49.10
+Iteration: 387 | Episodes: 15700 | Median Reward: 46.78 | Max Reward: 49.10
+Iteration: 389 | Episodes: 15800 | Median Reward: 47.12 | Max Reward: 49.10
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -54.2        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 390          |
+|    time_elapsed         | 8061         |
+|    total_timesteps      | 1597440      |
+| train/                  |              |
+|    approx_kl            | 0.0077758105 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -234         |
+|    explained_variance   | 0.999        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -22.8        |
+|    n_updates            | 3890         |
+|    policy_gradient_loss | -0.0209      |
+|    std                  | 1.09         |
+|    value_loss           | 3.75         |
+------------------------------------------
+Iteration: 392 | Episodes: 15900 | Median Reward: 46.32 | Max Reward: 49.10
+Iteration: 394 | Episodes: 16000 | Median Reward: 46.91 | Max Reward: 49.10
+Iteration: 396 | Episodes: 16100 | Median Reward: 46.92 | Max Reward: 49.10
+Iteration: 399 | Episodes: 16200 | Median Reward: 46.05 | Max Reward: 49.10
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -55.6        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 400          |
+|    time_elapsed         | 8271         |
+|    total_timesteps      | 1638400      |
+| train/                  |              |
+|    approx_kl            | 0.0011116413 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -234         |
+|    explained_variance   | 0.998        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -22.8        |
+|    n_updates            | 3990         |
+|    policy_gradient_loss | -0.002       |
+|    std                  | 1.09         |
+|    value_loss           | 4.53         |
+------------------------------------------
+Iteration: 401 | Episodes: 16300 | Median Reward: 45.71 | Max Reward: 49.10
+Iteration: 404 | Episodes: 16400 | Median Reward: 46.25 | Max Reward: 49.10
+Iteration: 406 | Episodes: 16500 | Median Reward: 46.08 | Max Reward: 49.10
+Iteration: 409 | Episodes: 16600 | Median Reward: 46.54 | Max Reward: 49.10
+---------------------------------------
+| rollout/                |           |
+|    ep_len_mean          | 101       |
+|    ep_rew_mean          | -55.6     |
+| time/                   |           |
+|    fps                  | 198       |
+|    iterations           | 410       |
+|    time_elapsed         | 8463      |
+|    total_timesteps      | 1679360   |
+| train/                  |           |
+|    approx_kl            | 0.0087288 |
+|    clip_fraction        | 0         |
+|    clip_range           | 0.3       |
+|    entropy_loss         | -235      |
+|    explained_variance   | 0.996     |
+|    learning_rate        | 0.0005    |
+|    loss                 | -21.9     |
+|    n_updates            | 4090      |
+|    policy_gradient_loss | -0.0117   |
+|    std                  | 1.09      |
+|    value_loss           | 2.78      |
+---------------------------------------
+Iteration: 411 | Episodes: 16700 | Median Reward: 44.82 | Max Reward: 49.10
+Iteration: 414 | Episodes: 16800 | Median Reward: 43.50 | Max Reward: 49.10
+Iteration: 416 | Episodes: 16900 | Median Reward: 46.31 | Max Reward: 49.10
+Iteration: 419 | Episodes: 17000 | Median Reward: 45.81 | Max Reward: 49.10
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -56         |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 420         |
+|    time_elapsed         | 8668        |
+|    total_timesteps      | 1720320     |
+| train/                  |             |
+|    approx_kl            | 0.018081259 |
+|    clip_fraction        | 0           |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -236        |
+|    explained_variance   | 0.998       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -23.4       |
+|    n_updates            | 4190        |
+|    policy_gradient_loss | -0.0173     |
+|    std                  | 1.09        |
+|    value_loss           | 1.24        |
+-----------------------------------------
+Iteration: 421 | Episodes: 17100 | Median Reward: 46.10 | Max Reward: 49.10
+Iteration: 424 | Episodes: 17200 | Median Reward: 43.61 | Max Reward: 49.10
+Iteration: 426 | Episodes: 17300 | Median Reward: 43.76 | Max Reward: 49.10
+Iteration: 429 | Episodes: 17400 | Median Reward: 46.26 | Max Reward: 49.10
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -54.4       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 430         |
+|    time_elapsed         | 8874        |
+|    total_timesteps      | 1761280     |
+| train/                  |             |
+|    approx_kl            | 0.009516202 |
+|    clip_fraction        | 0           |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -237        |
+|    explained_variance   | 1           |
+|    learning_rate        | 0.0005      |
+|    loss                 | -23.4       |
+|    n_updates            | 4290        |
+|    policy_gradient_loss | -0.00916    |
+|    std                  | 1.1         |
+|    value_loss           | 0.637       |
+-----------------------------------------
+Iteration: 431 | Episodes: 17500 | Median Reward: 46.64 | Max Reward: 49.10
+Iteration: 433 | Episodes: 17600 | Median Reward: 46.58 | Max Reward: 49.10
+Iteration: 436 | Episodes: 17700 | Median Reward: 43.63 | Max Reward: 49.10
+Iteration: 438 | Episodes: 17800 | Median Reward: 46.88 | Max Reward: 49.10
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -52.7        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 440          |
+|    time_elapsed         | 9076         |
+|    total_timesteps      | 1802240      |
+| train/                  |              |
+|    approx_kl            | 0.0006581225 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -238         |
+|    explained_variance   | 0.996        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -23          |
+|    n_updates            | 4390         |
+|    policy_gradient_loss | -1.45e-05    |
+|    std                  | 1.1          |
+|    value_loss           | 1.17         |
+------------------------------------------
+Iteration: 441 | Episodes: 17900 | Median Reward: 46.94 | Max Reward: 49.11
+Iteration: 443 | Episodes: 18000 | Median Reward: 44.29 | Max Reward: 49.11
+Iteration: 446 | Episodes: 18100 | Median Reward: 45.42 | Max Reward: 49.11
+Iteration: 448 | Episodes: 18200 | Median Reward: 46.84 | Max Reward: 49.11
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -55.7       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 450         |
+|    time_elapsed         | 9283        |
+|    total_timesteps      | 1843200     |
+| train/                  |             |
+|    approx_kl            | 0.037364874 |
+|    clip_fraction        | 0.075       |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -239        |
+|    explained_variance   | 0.999       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -23.5       |
+|    n_updates            | 4490        |
+|    policy_gradient_loss | -0.0402     |
+|    std                  | 1.1         |
+|    value_loss           | 0.529       |
+-----------------------------------------
+Iteration: 451 | Episodes: 18300 | Median Reward: 46.29 | Max Reward: 49.11
+Iteration: 453 | Episodes: 18400 | Median Reward: 46.14 | Max Reward: 49.18
+Iteration: 456 | Episodes: 18500 | Median Reward: 46.43 | Max Reward: 49.18
+Iteration: 458 | Episodes: 18600 | Median Reward: 46.75 | Max Reward: 49.18
+-------------------------------------------
+| rollout/                |               |
+|    ep_len_mean          | 101           |
+|    ep_rew_mean          | -54.3         |
+| time/                   |               |
+|    fps                  | 198           |
+|    iterations           | 460           |
+|    time_elapsed         | 9478          |
+|    total_timesteps      | 1884160       |
+| train/                  |               |
+|    approx_kl            | 0.00019684063 |
+|    clip_fraction        | 0             |
+|    clip_range           | 0.3           |
+|    entropy_loss         | -240          |
+|    explained_variance   | 1             |
+|    learning_rate        | 0.0005        |
+|    loss                 | -21.2         |
+|    n_updates            | 4590          |
+|    policy_gradient_loss | -0.000863     |
+|    std                  | 1.11          |
+|    value_loss           | 5.9           |
+-------------------------------------------
+Iteration: 461 | Episodes: 18700 | Median Reward: 46.13 | Max Reward: 49.18
+Iteration: 463 | Episodes: 18800 | Median Reward: 45.64 | Max Reward: 49.18
+Iteration: 466 | Episodes: 18900 | Median Reward: 46.90 | Max Reward: 49.18
+Iteration: 468 | Episodes: 19000 | Median Reward: 46.90 | Max Reward: 49.18
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -55.3        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 470          |
+|    time_elapsed         | 9686         |
+|    total_timesteps      | 1925120      |
+| train/                  |              |
+|    approx_kl            | 0.0009965717 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -240         |
+|    explained_variance   | 0.999        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -21.2        |
+|    n_updates            | 4690         |
+|    policy_gradient_loss | -0.00636     |
+|    std                  | 1.11         |
+|    value_loss           | 5.59         |
+------------------------------------------
+Iteration: 470 | Episodes: 19100 | Median Reward: 44.33 | Max Reward: 49.18
+Iteration: 473 | Episodes: 19200 | Median Reward: 43.83 | Max Reward: 49.18
+Iteration: 475 | Episodes: 19300 | Median Reward: 45.64 | Max Reward: 49.18
+Iteration: 478 | Episodes: 19400 | Median Reward: 45.67 | Max Reward: 49.18
+-------------------------------------------
+| rollout/                |               |
+|    ep_len_mean          | 101           |
+|    ep_rew_mean          | -54           |
+| time/                   |               |
+|    fps                  | 198           |
+|    iterations           | 480           |
+|    time_elapsed         | 9899          |
+|    total_timesteps      | 1966080       |
+| train/                  |               |
+|    approx_kl            | 0.00031061197 |
+|    clip_fraction        | 0             |
+|    clip_range           | 0.3           |
+|    entropy_loss         | -241          |
+|    explained_variance   | 0.999         |
+|    learning_rate        | 0.0005        |
+|    loss                 | -21.8         |
+|    n_updates            | 4790          |
+|    policy_gradient_loss | 3.3e-05       |
+|    std                  | 1.11          |
+|    value_loss           | 4.96          |
+-------------------------------------------
+Iteration: 480 | Episodes: 19500 | Median Reward: 46.99 | Max Reward: 49.18
+Iteration: 483 | Episodes: 19600 | Median Reward: 46.13 | Max Reward: 49.18
+Iteration: 485 | Episodes: 19700 | Median Reward: 46.89 | Max Reward: 49.18
+Iteration: 488 | Episodes: 19800 | Median Reward: 46.91 | Max Reward: 49.18
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 101          |
+|    ep_rew_mean          | -55.3        |
+| time/                   |              |
+|    fps                  | 198          |
+|    iterations           | 490          |
+|    time_elapsed         | 10106        |
+|    total_timesteps      | 2007040      |
+| train/                  |              |
+|    approx_kl            | 0.0027576596 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.3          |
+|    entropy_loss         | -242         |
+|    explained_variance   | 0.999        |
+|    learning_rate        | 0.0005       |
+|    loss                 | -21.3        |
+|    n_updates            | 4890         |
+|    policy_gradient_loss | -0.00759     |
+|    std                  | 1.11         |
+|    value_loss           | 5.1          |
+------------------------------------------
+Iteration: 490 | Episodes: 19900 | Median Reward: 43.55 | Max Reward: 49.18
+Iteration: 493 | Episodes: 20000 | Median Reward: 46.86 | Max Reward: 49.18
+Iteration: 495 | Episodes: 20100 | Median Reward: 46.09 | Max Reward: 49.18
+Iteration: 498 | Episodes: 20200 | Median Reward: 46.26 | Max Reward: 49.18
+-----------------------------------------
+| rollout/                |             |
+|    ep_len_mean          | 101         |
+|    ep_rew_mean          | -55.7       |
+| time/                   |             |
+|    fps                  | 198         |
+|    iterations           | 500         |
+|    time_elapsed         | 10309       |
+|    total_timesteps      | 2048000     |
+| train/                  |             |
+|    approx_kl            | 0.019956704 |
+|    clip_fraction        | 0.025       |
+|    clip_range           | 0.3         |
+|    entropy_loss         | -242        |
+|    explained_variance   | 0.998       |
+|    learning_rate        | 0.0005      |
+|    loss                 | -23         |
+|    n_updates            | 4990        |
+|    policy_gradient_loss | -0.0207     |
+|    std                  | 1.11        |
+|    value_loss           | 2.11        |
+-----------------------------------------
+Training End | Episodes: 20279 | Median Reward: 45.96 | Max Reward: 49.18
+Plot saved as fig_code1_1_residual.png
+(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand/codes[0m> c[K(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand/codes[0m> cd ..
+(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand[0m> cd agens[Kts
+(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand/agents[0m> ls
+agent_code1_1_gpu0.zip		 agent_g3b_0_weighted.zip	 agent_g3d_4_2_weighted_try02.zip  hand_pose_ppo_gpu_0_g3b_1e5lr.zip  hand_pose_ppo_gpu_0.zip
+agent_code1_1_residual_gpu6.zip  agent_g3c_5_weighted.zip	 agent_g3d_4_2_weighted.zip	   hand_pose_ppo_gpu_0_g3d_grace.zip  hand_pose_ppo_gpu_5_g3c.zip
+agent_code2_1_gpu2.zip		 agent_g3d_3_50int_weighted.zip  agent_g3d_6_weighted.zip	   hand_pose_ppo_gpu_0_g3d.zip	      hand_pose_ppo_gpu_5.zip
+(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand/agents[0m> cd ..
+(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand[0m> cd figs
+(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand/figs[0m> ls
+fig_code1_1.png		  fig_code2_1.png	fig_g3c_weighted.png	fig_g3d_2_weighted_try02.png  fig_g3d_weighted.png  g3_c_nonreset_fig.png  g3_fig_g3b_1e5lr.png
+fig_code1_1_residual.png  fig_g3b_weighted.png	fig_g3d_2_weighted.png	fig_g3d_weighted_50int.png    g3_c_fig.png	    g3_d_reset_fig.png	   g3_fig.png
+(mujoco_test) [4mdeepbull5[24m:[1m~/Bot_hand/figs[0m> exit()
+exit
+
+Script done on 2024-10-23 15:11:34-04:00 [COMMAND_EXIT_CODE="0"]
