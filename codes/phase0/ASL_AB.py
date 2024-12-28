@@ -49,6 +49,8 @@ asl_a_positions = {
     finger_actuators["Thumb"][4]: 0.5,   # ThumbJoint4_act # fixed
 }
 
+'''
+Ignore this for now - we are only focusing on creating the Letter 'A'. 
 # Joint positions for the letter 'B' in ASL
 asl_b_positions = {
     # Extend all fingers
@@ -60,6 +62,7 @@ asl_b_positions = {
     finger_actuators["Thumb"][3]: 1.309,   # ThumbJoint3_act  (proximal) [0 1.309]	
     finger_actuators["Thumb"][4]: 1.047,   # ThumbJoint4_act (base) [-1.047 1.047] This one is responsible for moving the thumb forward. 
 }
+'''
 
 asl_revert = { **{actuator: 0.0 for finger in ["Thumb"] for actuator in finger_actuators[finger]}}
 
@@ -70,8 +73,8 @@ for i in range(5):
 	
 	#set_joint_positions(asl_revert,100, 0.01)
 	# Set the hand to display the letter 'B'
-	set_joint_positions(asl_b_positions)
-	time.sleep(0.02)  # Pause to view the letter 'B'
+	#set_joint_positions(asl_b_positions)
+	#time.sleep(0.02)  # Pause to view the letter 'B'
 	
 	set_joint_positions(asl_revert,200, 0.01)
 
