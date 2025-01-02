@@ -27,7 +27,85 @@ This project leverages reinforcement learning to teach an agent to form various 
 
 
 ## Phase 1: RL pipeline
+The approach integrates a custom environment design, a deep neural network architecture with residual blocks, and implementation of Proximal Policy Optimization (PPO) algorithm enhanced with a recurrent layers.  
+### Environment Setup: 
+The reinforcement learning agent operates within a custom-made Gym environment designed to simulate the dynamics of a robotic hand using the MuJoCo physics engine. The environment, defined in a ‘HandEnv‘ class, includes:
+ - MuJoCo Model Loading: The environment loads a MuJoCo XML model (Shadow Dexterous Hand) specifying the hand’s physical properties, joint actuator identifiers and control ranges.
+ - Observation Space: A continuous box space of shape (96,) representing 24 joints, each described by a 4-dimensional quaternion.
+ - Action Space: A multi-discrete space where each actuator can select from 11 discrete actions (0 to 10) corresponding to target positions within its control range. Based on previous iterations, a discretized action space shows better performance as compared to a continuous action space.
+ - Reward Mechanism: The reward is based on the angular difference between the quaternions obtained from the agent’s current rendered pose and the desired pose, encouraging accurate joint positioning.
+ - Episode Configuration: Each episode consists of a single step with 200 internal rendering steps, followed by an environment reset, fostering precise control at the per-step level.
+### Neural network architecture: 
+A custom neural network architecture is designed to process observations and produce actions. The architecture integrates residual blocks to facilitate deeper representation
+learning and employs an LSTM layer to capture temporal dependencies. The network includes both policy and value networks.
+| **Layer**                  | **Type**       | **Output Size**        | **Activation** |
+|-----------------------------|---------------|------------------------|---------------|
+| **Input**                  | -             | 96                     | -             |
+| **Initial Fully Connected**| Linear        | 256                    | ReLU          |
+| **Initial Layer Normalization** | LayerNorm   | 256                    | -             |
+| **Residual Blocks**        |               |                        |               |
+|                             | Residual Block 1 | 256                    | ReLU          |
+|                             | Residual Block 2 | 256                    | ReLU          |
+|                             | Residual Block 3 | 256                    | ReLU          |
+|                             | Residual Block 4 | 256                    | ReLU          |
+|                             | Residual Block 5 | 256                    | ReLU          |
+| **Final Fully Connected**  | Linear        | 2048                   | ReLU          |
+| **Final Layer Normalization** | LayerNorm   | 2048                   | -             |
+| **Policy Network MLP**     | MLP           | (2048, 2048, 1024)     | ReLU          |
+| **Value Network MLP**      | MLP           | (2048, 2048, 1024)     | ReLU          |
+| **LSTM Layer**             | LSTM          | 1024                   | -             |
 
-Leveraged Proximal Policy Algorithm with recurrent neural networks, with custom Actor-Critic (A2C) policy, to learn a generalized, optimal policy to generate ASL hand gestures. 
+#### Residual blocks: 
+Each residual block consists of two linear layers with ReLU activations and dropout for
+regularization. A residual connection bypasses these layers, aiding in gradient flow and
+mitigating vanishing gradients.
+#### Custom Feature Extractor:
+ - Initial Fully Connected Layer: Maps 96-dimensional input to 256 dimensions, followed by ReLU and layer normalization.
+ - Five Residual Blocks: Each block refines the representation, maintaining stable gradient flow across 256 input-output dimensions.
+ - Final Fully Connected Layer: Projects features to 2048 dimensions with ReLU and layer normalization.
+#### Actor-Critic Custom LSTM Policy:
+Designed a custom Actor-Critic (A2C) policy with LSTM layers to extend over the initial Multi-layer perceptron policy, in order to integrate a custom Feature Extractor. The policy and value networks have three fully connected layers, each with architectures (2048, 2048, 1024). A LSTM layer with a hidden size of 1024 captures temporal dependencies.
+
+
+### **Loss Function**
+The **Proximal Policy Optimization (PPO)** loss function ensures a balance between policy improvement and training stability by constraining updates to prevent excessive deviations from the previous policy. The loss consists of three main components: **clipped surrogate objective**, **value function loss**, and **entropy bonus**. The overall loss is defined as:
+\[
+L(\theta) = \hat{\mathbb{E}}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \ \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right] 
+- c_1 \hat{\mathbb{E}}_t \left[ \left(V_\theta(s_t) - V_t^{\text{targ}}\right)^2 \right] 
++ c_2 \hat{\mathbb{E}}_t \left[ S[\pi_\theta](s_t) \right],
+\]
+where:  
+- \( r_t(\theta) = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} \): Probability ratio of the new policy to the old policy.  
+- \( \hat{A}_t \): Advantage estimate at time step \( t \).  
+- \( \epsilon \): Clipping parameter to restrict policy updates.  
+- \( c_1 \) and \( c_2 \): Coefficients for value function loss and entropy bonus, respectively.  
+- \( S[\pi_\theta](s_t) \): Entropy of the policy, encouraging exploration.  
+
+#### **Clipped Surrogate Objective**
+The **clipped surrogate objective** limits policy updates to remain within a *trust region*, stabilizing training. The objective is:
+\[
+\min \left( r_t(\theta) \hat{A}_t, \ \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right)
+\]
+- \( \epsilon \) (e.g., `clip_range=0.2`) defines the acceptable range for updates.  
+- Prevents drastic policy changes in a single step, maintaining the reliability of advantage estimates.
+
+#### **Value Function Loss**
+The **value function loss** penalizes deviations between the predicted value \( V_\theta(s_t) \) and the target value \( V_t^{\text{targ}} \):
+\[
+\left(V_\theta(s_t) - V_t^{\text{targ}}\right)^2
+\]
+- Weighted by \( c_1 \) (e.g., `value_loss_coef=0.5`).  
+- Ensures accurate estimation of expected returns, which are essential for computing advantages.
+
+#### **Entropy Bonus**
+The **entropy bonus** encourages exploration by promoting policy stochasticity:
+\[
+S[\pi_\theta](s_t)
+\]
+
+- Weighted by \( c_2 \) (e.g., `entropy_coef=0.01`).  
+- Prevents early convergence to suboptimal deterministic policies by maintaining sufficient randomness.
+
+This balanced loss function effectively stabilizes training, promotes exploration, and ensures reliable value estimation, making PPO a robust choice for policy optimization tasks.
 
 
