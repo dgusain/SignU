@@ -1,0 +1,7 @@
+# Ignore specific folders
+Cloning_code/
+codes/
+policy_model.zip
+quat_dict.pkl
+quat_v.pkl
+RL_code/
