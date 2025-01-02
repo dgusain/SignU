@@ -67,7 +67,14 @@ mitigating vanishing gradients.
 Designed a custom Actor-Critic (A2C) policy with LSTM layers to extend over the initial Multi-layer perceptron policy, in order to integrate a custom Feature Extractor. The policy and value networks have three fully connected layers, each with architectures (2048, 2048, 1024). A LSTM layer with a hidden size of 1024 captures temporal dependencies.
 
 ### Results: 
-
+<table>
+<tr>
+     <img src="https://github.com/dgusain/SignU/blob/main/gallery/A_sign_act.png" alt="SignMimic" width="250" height="200">  
+</tr>
+<tr>
+     <img src="https://github.com/dgusain/SignU/blob/main/gallery/M_sign_acrt.png" alt="SignMimic" width="250" height="200">  
+</tr>
+</table>
 
 
 
