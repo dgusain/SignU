@@ -79,33 +79,7 @@ where:
 - \( \hat{A}_t \): Advantage estimate at time step \( t \).  
 - \( \epsilon \): Clipping parameter to restrict policy updates.  
 - \( c_1 \) and \( c_2 \): Coefficients for value function loss and entropy bonus, respectively.  
-- \( S[\pi_\theta](s_t) \): Entropy of the policy, encouraging exploration.  
+- \( S[\pi_\theta](s_t) \): Entropy of the policy, encouraging exploration. 
 
-#### **Clipped Surrogate Objective**
-The **clipped surrogate objective** limits policy updates to remain within a *trust region*, stabilizing training. The objective is:
-\[
-\min \left( r_t(\theta) \hat{A}_t, \ \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right)
-\]
-- \( \epsilon \) (e.g., `clip_range=0.2`) defines the acceptable range for updates.  
-- Prevents drastic policy changes in a single step, maintaining the reliability of advantage estimates.
-
-#### **Value Function Loss**
-The **value function loss** penalizes deviations between the predicted value \( V_\theta(s_t) \) and the target value \( V_t^{\text{targ}} \):
-\[
-\left(V_\theta(s_t) - V_t^{\text{targ}}\right)^2
-\]
-- Weighted by \( c_1 \) (e.g., `value_loss_coef=0.5`).  
-- Ensures accurate estimation of expected returns, which are essential for computing advantages.
-
-#### **Entropy Bonus**
-The **entropy bonus** encourages exploration by promoting policy stochasticity:
-\[
-S[\pi_\theta](s_t)
-\]
-
-- Weighted by \( c_2 \) (e.g., `entropy_coef=0.01`).  
-- Prevents early convergence to suboptimal deterministic policies by maintaining sufficient randomness.
-
-This balanced loss function effectively stabilizes training, promotes exploration, and ensures reliable value estimation, making PPO a robust choice for policy optimization tasks.
 
 
