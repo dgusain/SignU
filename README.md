@@ -7,10 +7,10 @@ This project leverages reinforcement learning to teach an agent to form various 
 <table>
 <tr>
   <td width="25%">
-     <img src="https://github.com/dgusain/SignU/blob/main/ASL_VW_mj_git.gif" alt="SignMimic" width="500" height="400">  
+     <img src="https://github.com/dgusain/SignU/blob/main/gallery/ASL_VW_mj_git.gif" alt="SignMimic" width="500" height="400">  
   </td>
     <td width="25%">
-     <img src="https://github.com/dgusain/SignU/blob/main/ASL_AB_mj_git.gif" alt="SignMimic" width="500" height="400">  
+     <img src="https://github.com/dgusain/SignU/blob/main/gallery/ASL_AB_mj_git.gif" alt="SignMimic" width="500" height="400">  
   </td>
 </tr>
 </table>
@@ -67,6 +67,8 @@ mitigating vanishing gradients.
 Designed a custom Actor-Critic (A2C) policy with LSTM layers to extend over the initial Multi-layer perceptron policy, in order to integrate a custom Feature Extractor. The policy and value networks have three fully connected layers, each with architectures (2048, 2048, 1024). A LSTM layer with a hidden size of 1024 captures temporal dependencies.
 
 ### Results: 
+These findings underscore the potential of the developed neural network architecture in comprehending the intricacies of joint movements. The network effectively trains the agent to perform these actions fluidly and without collisions, adhering to the physical constraints imposed by the environment. However, certain challenges remain, particularly in rendering letters such as ’B’, which necessitate the movement of only the thumb joints. This difficulty arises from the occurrence of exceedingly sparse rewards during the training process, resulting in suboptimal learning performance.
+Future endeavors will focus on refining the reward function and implementing its dynamic utilization, thereby enabling the agent to learn all 26 letters of the American Sign Language (ASL) alphabet in addition to several gestures. 
 <table>
 <tr>
      <img src="https://github.com/dgusain/SignU/blob/main/gallery/results_AN.png" alt="SignMimic" width="600" height="600">  
