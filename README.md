@@ -66,22 +66,8 @@ mitigating vanishing gradients.
 #### Actor-Critic Custom LSTM Policy:
 Designed a custom Actor-Critic (A2C) policy with LSTM layers to extend over the initial Multi-layer perceptron policy, in order to integrate a custom Feature Extractor. The policy and value networks have three fully connected layers, each with architectures (2048, 2048, 1024). A LSTM layer with a hidden size of 1024 captures temporal dependencies.
 
+### Results: 
 
-### **Loss Function**
-The **Proximal Policy Optimization (PPO)** loss function ensures a balance between policy improvement and training stability by constraining updates to prevent excessive deviations from the previous policy. The loss consists of three main components: **clipped surrogate objective**, **value function loss**, and **entropy bonus**. The overall loss is defined as:
-$$
-L(\theta) = \hat{\mathbb{E}}_t \left[ \min \left( r_t(\theta) \hat{A}_t, \ \text{clip}(r_t(\theta), 1 - \epsilon, 1 + \epsilon) \hat{A}_t \right) \right] 
-- c_1 \hat{\mathbb{E}}_t \left[ \left(V_\theta(s_t) - V_t^{\text{targ}}\right)^2 \right] 
-+ c_2 \hat{\mathbb{E}}_t \left[ S[\pi_\theta](s_t) \right],
-$$
-
-where:  
-
-- \( r_t(\theta) = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)} \): Probability ratio of the new policy to the old policy.  
-- \( \hat{A}_t \): Advantage estimate at time step \( t \).  
-- \( \epsilon \): Clipping parameter to restrict policy updates.  
-- \( c_1 \) and \( c_2 \): Coefficients for value function loss and entropy bonus, respectively.  
-- \( S[\pi_\theta](s_t) \): Entropy of the policy, encouraging exploration.
 
 
 
