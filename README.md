@@ -69,10 +69,10 @@ Designed a custom Actor-Critic (A2C) policy with LSTM layers to extend over the 
 ### Results: 
 <table>
 <tr>
-     <img src="https://github.com/dgusain/SignU/blob/main/gallery/A_sign_act.png" alt="SignMimic" width="600" height="300">  
+     <img src="https://github.com/dgusain/SignU/blob/main/gallery/results_AN.png" alt="SignMimic" width="600" height="600">  
 </tr>
 <tr>
-     <img src="https://github.com/dgusain/SignU/blob/main/gallery/M_sign_acrt.png" alt="SignMimic" width="600" height="300">  
+     <img src="https://github.com/dgusain/SignU/blob/main/gallery/results_VW.png" alt="SignMimic" width="600" height="600">  
 </tr>
 </table>
 
