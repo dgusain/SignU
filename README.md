@@ -8,9 +8,6 @@ This project leverages reinforcement learning to teach an agent to form various 
   <td width="25%">
      <img src="https://github.com/dgusain/SignU/blob/main/ASL_VW_mj_git.gif" alt="SignMimic" width="250" height="200">  
   </td>
-  <td width="25%">
-     <img src="https://github.com/dgusain/SignU/blob/main/ASL_MN_mj_git.gif" alt="SignMimic" width="250" height="200">  
-  </td>
     <td width="25%">
      <img src="https://github.com/dgusain/SignU/blob/main/ASL_AB_mj_git.gif" alt="SignMimic" width="250" height="200">  
   </td>
