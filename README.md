@@ -1,5 +1,5 @@
 
-# Project: Reinforcement Learning for American Sign Language Fingerspelling in MuJoCo
+# SignU: Training a MuJoCo-based robotic hand to perform American Sign Language gestures
 
 ## Context
 This project leverages reinforcement learning to teach an agent to form various hand gestures for fingerspelling in American Sign Language (ASL). The agent learns to form letters like "A", "B", etc., autonomously. Secondly, this project aims to develop the world's first mapping strategy, linking SMPLX 3D body models to a reality based phyics engine like MuJoCo. 
